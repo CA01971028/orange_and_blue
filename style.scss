@@ -1,3 +1,20 @@
 #st{
     font-size:50px;
+    text-align: center;
+}
+#img{
+    text-align:center;
+    background-color: rgb(87, 92, 97);
+}
+#mg{
+    margin-top:10px;
+}
+.label{
+    font-size: 50px;
+    margin-left:10px ;
+    display: inline-block;
+  background: linear-gradient(180deg, #0072b4 0%, #7bc0be 72%, #afebea 100%);
+  background: -webkit-linear-gradient(-45deg, #fed878 0%, #4a5ae7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
