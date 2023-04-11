@@ -1,0 +1,20 @@
+{
+  "name": "orange_and_blue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CA01971028/orange_and_blue.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CA01971028/orange_and_blue/issues"
+  },
+  "homepage": "https://github.com/CA01971028/orange_and_blue#readme"
+}
