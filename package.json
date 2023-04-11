@@ -1,7 +1,6 @@
 {
   "name": "orange_and_blue",
   "version": "1.0.0",
-  "description": "",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/CA01971028/orange_and_blue/issues"
   },
-  "homepage": "https://github.com/CA01971028/orange_and_blue#readme"
+  "homepage": "https://github.com/CA01971028/orange_and_blue#readme",
+  "description": ""
 }
