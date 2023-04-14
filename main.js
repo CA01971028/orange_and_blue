@@ -3,6 +3,10 @@ window.addEventListener('DOMContentLoaded', () => {// ページ読込後に実�
     let xy = 3;
     let count = 0;
 
+
+
+
+
     for (let i = 0; i < xy; i++) {
         let tr = document.createElement("tr");
         for (let j = 0; j < xy; j++) {
@@ -14,6 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {// ページ読込後に実�
 
             td.addEventListener('click', (event) => {
                 let self = event.target;
+                //クリックした時の〇か×かの判定
                 let pice = count++ % 2 == 0 ? "○" : "×";
                 self.textContent = pice;
                 if (count == xy * xy) {
@@ -27,3 +32,10 @@ window.addEventListener('DOMContentLoaded', () => {// ページ読込後に実�
         board.appendChild(tr);
     }
 });
+function f (){
+//keyの取得
+document.addEventListener('keydown', e => {
+    select.textContent = e.key;
+  });
+}
+f()
