@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', () => {// ページ読込後に実�
         let tr = document.createElement("tr");
         for (let j = 0; j < xy; j++) {
             let td = document.createElement("td");
-            const option = { once: true }; 
+            // const option = { once: true }; 
             td.className = `cell ${j}-${i}`;
             tr.appendChild(td);
             
