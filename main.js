@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', () => {// ページ読込後に実�
             const option = { once: true }; 
             td.className = `cell ${j}-${i}`;
             tr.appendChild(td);
-
+            
             td.addEventListener('click', (event) => {
                 let self = event.target;
                 // //クリックした時の〇か×かの判定
