@@ -1,7 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {// ページ読込後に実行
     let board = document.getElementById("board");
     let xy = 3;
-    let count = 0;
 
     for (let i = 0; i < xy; i++) {
         let tr = document.createElement("tr");
@@ -11,10 +10,7 @@ window.addEventListener('DOMContentLoaded', () => {// ページ読込後に実�
             td.className = `cell ${j}-${i}`;
             tr.appendChild(td);
             
-            td.addEventListener('click', (event) => {
-                let self = event.target;
-                // //クリックした時の〇か×かの判定
-                // let pice = count++ % 2 == 0 ? "○" : "×";
+         
                  //keyの取得
                 document.addEventListener('keydown', e => {
                     let level;
@@ -30,16 +26,14 @@ window.addEventListener('DOMContentLoaded', () => {// ページ読込後に実�
                     }else{
                         select.textContent = "NONE"
                     }
+                    td.addEventListener('click', (event) => {
+                        let self = event.target;
                     self.textContent = level;
+    
+                },option);
                 });
                 
-                if (count == xy * xy) {
-                    setTimeout(() => {
-                        alert('終了しました。');
-                    }, 300);
-                }
-
-            },option);
+                
         }
         board.appendChild(tr);
     }
