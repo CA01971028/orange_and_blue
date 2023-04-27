@@ -58,7 +58,7 @@
     height: 80px;
     font-size: 40px;
     font-weight: bold;
-    color: orangered;
+    // color: orangered;
   }
   
   #back {
@@ -79,5 +79,26 @@
   }
   #option{
     font-size:30px;
+  }
+  #bu{
+    text-align: center;
+  }
+  #bg_1{
+    background-color: grey;
+    width: 250px;
+    font-size:40px;
+    text-align: center;
+  }
+  #bg_2{
+    background-color: grey;
+    width: 250px;
+    font-size:40px;
+    text-align: center;
+  }
+  #player_1{
+    color:red;
+  }
+  #player_2{
+    color:blue;
   }
   
