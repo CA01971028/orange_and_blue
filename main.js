@@ -16,6 +16,12 @@ window.addEventListener('DOMContentLoaded', () => {// ページ読込後に実�
         [0,0,0],
         [0,0,0]
     ]
+    //勝ち負けの判定
+    let hoge =[
+        [0,0,0],
+        [0,0,0],
+        [0,0,0]
+    ]
     //選択された駒の定義
     let level;
 
@@ -59,12 +65,27 @@ window.addEventListener('DOMContentLoaded', () => {// ページ読込後に実�
                      const judge = (le_val,sc_val=[],sel_val,index_1,index_2) =>{
                         if(le_val === "◎" && sc_val[index_1][index_2] !=="◎" ){
                             sel_val.textContent = le_val;
+                            if(count % 2 == 0){
+                                hoge[index_1][index_2] = "r";
+                            }else{
+                                hoge[index_1][index_2] = "b";
+                            }
                             count++
                         }else if(le_val === "〇" && (sc_val[index_1][index_2] !== "〇" && sc_val[index_1][index_2] !== "◎")){
                             sel_val.textContent = le_val;
+                            if(count % 2 == 0){
+                                hoge[index_1][index_2] = "r";
+                            }else{
+                                hoge[index_1][index_2] = "b";
+                            }
                             count++
                         }else if(le_val === "△" && sc_val[index_1][index_2] == 0){
                             sel_val.textContent =le_val;
+                            if(count % 2 == 0){
+                                hoge[index_1][index_2] = "r";
+                            }else{
+                                hoge[index_1][index_2] = "b";
+                            }
                             count++
                         }
                         score[index_1][index_2] = level;
@@ -118,15 +139,50 @@ window.addEventListener('DOMContentLoaded', () => {// ページ読込後に実�
                                 judge(level,score,self,index1,index2)
                             break;
                         }
-                      
+    // //勝ち負けの判定(オレンジ)
+    // if(hoge[0][0] == "r" && hoge[0][1] == "r" && hoge[0][2] == "r"){
+    //     alert("オレンジの勝ち")
+    // }else if(hoge[1][0] == "r" && hoge[1][1] == "r" && hoge[1][2] == "r"){
+    //     alert("オレンジの勝ち")
+    // }else if(hoge[2][0] == "r" && hoge[2][1] == "r" && hoge[2][2] == "r"){
+    //     alert("オレンジの勝ち")
+    // }else if(hoge[0][0] == "r" && hoge[1][0] == "r" && hoge[2][0] == "r"){
+    //     alert("オレンジの勝ち")
+    // }else if(hoge[0][1] == "r" && hoge[1][1] == "r" && hoge[2][1] == "r"){
+    //     alert("オレンジの勝ち")
+    // }else if(hoge[0][2] == "r" && hoge[1][2] == "r" && hoge[2][2] == "r"){
+    //     alert("オレンジの勝ち")
+    // }else if(hoge[0][0] == "r" && hoge[1][1] == "r" && hoge[2][2] == "r"){
+    //     alert("オレンジの勝ち")
+    // }
+    // //勝ち負けの判定(青)
+    // if(hoge[0][0] == "b" && hoge[0][1] == "b" && hoge[0][2] == "b"){
+    //     alert("青の勝ち")
+    // }else if(hoge[1][0] == "b" && hoge[1][1] == "b" && hoge[1][2] == "b"){
+    //     alert("青の勝ち")
+    // }else if(hoge[2][0] == "b" && hoge[2][1] == "b" && hoge[2][2] == "b"){
+    //     alert("青の勝ち")
+    // }else if(hoge[0][0] == "b" && hoge[1][0] == "b" && hoge[2][0] == "b"){
+    //     alert("青の勝ち")
+    // }else if(hoge[0][1] == "b" && hoge[1][1] == "b" && hoge[2][1] == "b"){
+    //     alert("青の勝ち")
+    // }else if(hoge[0][2] == "b" && hoge[1][2] == "b" && hoge[2][2] == "b"){
+    //     alert("青の勝ち")
+    // }else if(hoge[0][0] == "b" && hoge[1][1] == "b" && hoge[2][2] == "b"){
+    //     alert("青の勝ち")
+    // }
+    
+    console.log(hoge)
+
                         // alert(level)
                         
-                        console.log(score)
+                        // console.log(score)
                     },option);
         }
         board.appendChild(tr);
     }
 
+    
     //持ち駒の表示
     pl_1.forEach(function(value) {
         p_1 += value;
