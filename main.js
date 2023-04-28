@@ -52,46 +52,76 @@ window.addEventListener('DOMContentLoaded', () => {// ページ読込後に実�
                         }else{
                             self.style.color = 'blue';
                         }
-                            var index = pl_1.indexOf(level);
-                            pl_1.splice(index,1);
+                            // var index = pl_1.indexOf(level);
+                            // pl_1.splice(index,1);
                         
+                    //駒が置けるか置けないかの判定
+                     const judge = (le_val,sc_val=[],sel_val,index_1,index_2) =>{
+                        if(le_val === "◎" && sc_val[index_1][index_2] !=="◎" ){
+                            sel_val.textContent = le_val;
+                            count++
+                        }else if(le_val === "〇" && (sc_val[index_1][index_2] !== "〇" && sc_val[index_1][index_2] !== "◎")){
+                            sel_val.textContent = le_val;
+                            count++
+                        }else if(le_val === "△" && sc_val[index_1][index_2] == 0){
+                            sel_val.textContent =le_val;
+                            count++
+                        }
+                        score[index_1][index_2] = level;
+                     }
+
                         switch(self.className){
                             case "cell 0-0":
-                                if(level === "◎" && score[0,0] !=="◎" ){
-                                    self.textContent = level;
-                                }else if(level === "〇" && score[0,0] !== "〇" || "◎"){
-                                    self.textContent = level;
-                                }else if(level == "△" && score[0,0] == 0){
-                                    self.textContent = level;
-                                }
-                                score[0,0] = level;
+                            //持ち駒が置けるか置けないか
+                            var index1 = 0;
+                            var index2 = 0;
+                            judge(level,score,self,index1,index2)
                             break;
                             case "cell 0-1":
-                                score[0,1] = level;
+                                var index1 = 1;
+                                var index2 = 0;
+                                judge(level,score,self,index1,index2)
                             break;
                             case "cell 0-2":
-                                score[0,2] = level;
+                                var index1 = 2;
+                                var index2 = 0;
+                                judge(level,score,self,index1,index2)
                             break;
                             case "cell 1-0":
-                                score[1,0] = level;
+                                var index1 = 0;
+                                var index2 = 1;
+                                judge(level,score,self,index1,index2)
                             break;
                             case "cell 1-1":
-                                score[1,1] = level;
+                                var index1 = 1;
+                                var index2 = 1;
+                                judge(level,score,self,index1,index2)
                             break;
                             case "cell 1-2":
-                                score[1,2] = level;
+                                var index1 = 2;
+                                var index2 = 1;
+                                judge(level,score,self,index1,index2)
                             break;
                             case "cell 2-0":
-                                score[2,0] = level;
+                                var index1 = 0;
+                                var index2 = 2;
+                                judge(level,score,self,index1,index2)
                             break;
                             case "cell 2-1":
-                                score[2,1] = level;
+                                var index1 = 1;
+                                var index2 = 2;
+                                judge(level,score,self,index1,index2)
                             break;
                             case "cell 2-2":
-                                score[2,2] = level;
+                                var index1 = 2;
+                                var index2 = 2;
+                                judge(level,score,self,index1,index2)
                             break;
                         }
-                        count++
+                      
+                        // alert(level)
+                        
+                        console.log(score)
                     },option);
         }
         board.appendChild(tr);
