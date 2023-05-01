@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', () => {// ページ読込後に実�
     let board = document.getElementById("board");
     let xy = 3;
     //ラウンド数
-    let count = 1;
+    let count = 0;
     //プレイヤー設定
     let player = 1;
     //プレイヤーの持ち駒
@@ -53,13 +53,29 @@ window.addEventListener('DOMContentLoaded', () => {// ページ読込後に実�
                 
                     td.addEventListener('click', (event) => {
                         let self = event.target;
+                        //赤と青の色の変化
                         if(count % 2 == 0){
                             self.style.color ='red';
                         }else{
                             self.style.color = 'blue';
                         }
-                            // var index = pl_1.indexOf(level);
-                            // pl_1.splice(index,1);
+                        //残りの駒数の表示
+                        const element = document.getElementById("player_1");
+                        element.remove();
+                        let textBox_element = document.querySelector('#bg_1');
+                        //新しい要素を追加
+                        let new_element = document.createElement('span');
+                        
+                        var index = pl_1.indexOf(level);
+                        pl_1.splice(index,1);
+                        console.log(pl_1)
+                        p_1 = "";
+                        pl_1.forEach(function(value) {
+                            p_1 += value;
+                        })
+                        new_element.textContent = p_1;
+                        new_element.id = "player_1";
+                        textBox_element.appendChild(new_element);
                         
                     //駒が置けるか置けないかの判定
                      const judge = (le_val,sc_val=[],sel_val,index_1,index_2) =>{
@@ -172,7 +188,7 @@ window.addEventListener('DOMContentLoaded', () => {// ページ読込後に実�
     //     alert("青の勝ち")
     // }
     
-    console.log(hoge)
+    // console.log(hoge)
 
                         // alert(level)
                         
@@ -181,15 +197,13 @@ window.addEventListener('DOMContentLoaded', () => {// ページ読込後に実�
         }
         board.appendChild(tr);
     }
-
-    
-    //持ち駒の表示
-    pl_1.forEach(function(value) {
-        p_1 += value;
-    })
-    pl_2.forEach(function(value) {
-        p_2 += value;
-    })
-    player_1.textContent = p_1;
-    player_2.textContent = p_2;
+//    //持ち駒の表示
+//    pl_1.forEach(function(value) {
+//     p_1 += value;
+// })
+// pl_2.forEach(function(value) {
+//     p_2 += value;
+// })
+// player_1.textContent = p_1;
+// player_2.textContent = p_2;
 });
