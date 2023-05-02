@@ -115,4 +115,11 @@ td {
 
 #player_2 {
   color: blue;
+}
+
+#turn {
+  display: inline-block;
+  font-size: 30px;
+  color: red;
+  margin-left: 30%;
 }/*# sourceMappingURL=style.css.map */

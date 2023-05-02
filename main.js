@@ -60,22 +60,39 @@ window.addEventListener('DOMContentLoaded', () => {// ページ読込後に実�
                             self.style.color = 'blue';
                         }
                         //残りの駒数の表示
-                        const element = document.getElementById("player_1");
-                        element.remove();
-                        let textBox_element = document.querySelector('#bg_1');
+                        // const element = document.getElementById("player_1");
+                        // element.remove();
+                        // let textBox_element = document.querySelector('#bg_1');
                         //新しい要素を追加
-                        let new_element = document.createElement('span');
+                        // let new_element = document.createElement('span');
+                        let turn_text = document.querySelector("#turn");
+                        if(count % 2 == 0){
+                            var index = pl_1.indexOf(level);
+                            pl_1.splice(index,1);
+                            console.log(pl_1)
+                            p_1 = "";
+                            pl_1.forEach(function(value) {
+                                p_1 += value;
+                            })
+                            player_1.textContent = p_1;
+                            turn.textContent ="青のターン";
+                            turn_text.style.color = "blue";
+                        }else{
+                            var index = pl_2.indexOf(level);
+                            pl_2.splice(index,1);
+                            console.log(pl_2)
+                            p_2 = "";
+                            pl_2.forEach(function(value) {
+                                p_2 += value;
+                            })
+                            player_2.textContent = p_2;
+                            turn.textContent ="オレンジのターン";
+                            turn_text.style.color = "red";
+                        }
                         
-                        var index = pl_1.indexOf(level);
-                        pl_1.splice(index,1);
-                        console.log(pl_1)
-                        p_1 = "";
-                        pl_1.forEach(function(value) {
-                            p_1 += value;
-                        })
-                        new_element.textContent = p_1;
-                        new_element.id = "player_1";
-                        textBox_element.appendChild(new_element);
+                        // new_element.id = "player_1";
+        
+                        // textBox_element.appendChild(new_element);
                         
                     //駒が置けるか置けないかの判定
                      const judge = (le_val,sc_val=[],sel_val,index_1,index_2) =>{
@@ -197,13 +214,5 @@ window.addEventListener('DOMContentLoaded', () => {// ページ読込後に実�
         }
         board.appendChild(tr);
     }
-//    //持ち駒の表示
-//    pl_1.forEach(function(value) {
-//     p_1 += value;
-// })
-// pl_2.forEach(function(value) {
-//     p_2 += value;
-// })
-// player_1.textContent = p_1;
-// player_2.textContent = p_2;
+
 });
