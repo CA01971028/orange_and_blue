@@ -37,7 +37,7 @@ window.addEventListener('DOMContentLoaded', () => {// ページ読込後に実�
                  //keyの取得
                 document.addEventListener('keydown', e => {
  
-                    if(e.key==="s"){
+                    if(e.key==="s" ){
                         select.textContent = e.key;
                         level = "△"
                     }else if(e.key ==="m"){
@@ -59,65 +59,45 @@ window.addEventListener('DOMContentLoaded', () => {// ページ読込後に実�
                         }else{
                             self.style.color = 'blue';
                         }
-                        //残りの駒数の表示
-                        // const element = document.getElementById("player_1");
-                        // element.remove();
-                        // let textBox_element = document.querySelector('#bg_1');
-                        //新しい要素を追加
-                        // let new_element = document.createElement('span');
-                        let turn_text = document.querySelector("#turn");
-                        if(count % 2 == 0){
-                            var index = pl_1.indexOf(level);
-                            pl_1.splice(index,1);
-                            console.log(pl_1)
-                            p_1 = "";
-                            pl_1.forEach(function(value) {
-                                p_1 += value;
-                            })
-                            player_1.textContent = p_1;
-                            turn.textContent ="青のターン";
-                            turn_text.style.color = "blue";
-                        }else{
-                            var index = pl_2.indexOf(level);
-                            pl_2.splice(index,1);
-                            console.log(pl_2)
-                            p_2 = "";
-                            pl_2.forEach(function(value) {
-                                p_2 += value;
-                            })
-                            player_2.textContent = p_2;
-                            turn.textContent ="オレンジのターン";
-                            turn_text.style.color = "red";
-                        }
-                        
-                        // new_element.id = "player_1";
-        
-                        // textBox_element.appendChild(new_element);
+                     
                         
                     //駒が置けるか置けないかの判定
                      const judge = (le_val,sc_val=[],sel_val,index_1,index_2) =>{
-                        if(le_val === "◎" && sc_val[index_1][index_2] !=="◎" ){
-                            sel_val.textContent = le_val;
-                            if(count % 2 == 0){
+                        if(le_val === "◎" && sc_val[index_1][index_2] !=="◎"){
+                            if(count % 2 == 0 && pl_1.includes("◎")){
                                 hoge[index_1][index_2] = "r";
-                            }else{
+                                sel_val.textContent = le_val;
+                                console.log("最初の処理です")
+                            }else if(count % 2 == 1 && pl_2.includes("◎")){
                                 hoge[index_1][index_2] = "b";
+                                sel_val.textContent = le_val;
+                            }else{
+                                alert("駒がありません")
                             }
                             count++
+                            console.log(hoge)
                         }else if(le_val === "〇" && (sc_val[index_1][index_2] !== "〇" && sc_val[index_1][index_2] !== "◎")){
-                            sel_val.textContent = le_val;
-                            if(count % 2 == 0){
+                            if(count % 2 == 0 && pl_1.includes("〇")){
                                 hoge[index_1][index_2] = "r";
-                            }else{
+                                sel_val.textContent = le_val;
+                                console.log("最初の処理です")
+                            }else if(count % 2 == 1 && pl_2.includes("〇")){
                                 hoge[index_1][index_2] = "b";
+                                sel_val.textContent = le_val;
+                            }else{
+                                alert("駒がありません")
                             }
                             count++
                         }else if(le_val === "△" && sc_val[index_1][index_2] == 0){
-                            sel_val.textContent =le_val;
-                            if(count % 2 == 0){
+                            if(count % 2 == 0 && pl_1.includes("△")){
                                 hoge[index_1][index_2] = "r";
-                            }else{
+                                sel_val.textContent = le_val;
+                                console.log("最初の処理です")
+                            }else if(count % 2 == 1 && pl_2.includes("△")){
                                 hoge[index_1][index_2] = "b";
+                                sel_val.textContent = le_val;
+                            }else{
+                                alert("駒がありません")
                             }
                             count++
                         }
@@ -172,6 +152,36 @@ window.addEventListener('DOMContentLoaded', () => {// ページ読込後に実�
                                 judge(level,score,self,index1,index2)
                             break;
                         }
+                           //オレンジか青かのターン
+                           let turn_text = document.querySelector("#turn");
+                           if(count % 2 == 0){
+                               turn.textContent ="オレンジのターン";
+                               turn_text.style.color = "red";
+                           }else{
+                               turn.textContent ="青のターン";
+                               turn_text.style.color = "blue";
+                           }
+                        if(count % 2 == 1){
+                            var index = pl_1.indexOf(level);
+                            pl_1.splice(index,1);
+                            console.log(pl_1)
+                            console.log("二回目の処理です")
+                            p_1 = "";
+                            pl_1.forEach(function(value) {
+                                p_1 += value;
+                            })
+                            player_1.textContent = p_1;
+                        }else{
+                            var index = pl_2.indexOf(level);
+                            pl_2.splice(index,1);
+                            console.log(pl_2)
+                            p_2 = "";
+                            pl_2.forEach(function(value) {
+                                p_2 += value;
+                            })
+                            player_2.textContent = p_2;
+                        }
+                        
     // //勝ち負けの判定(オレンジ)
     // if(hoge[0][0] == "r" && hoge[0][1] == "r" && hoge[0][2] == "r"){
     //     alert("オレンジの勝ち")
