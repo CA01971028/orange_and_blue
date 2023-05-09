@@ -12,9 +12,9 @@ window.addEventListener('DOMContentLoaded', () => {// ページ読込後に実�
     let p_2 = "";
     //スコアボードの定義
     let score = [
-        [0,0,0],
-        [0,0,0],
-        [0,0,0]
+        ["","",""],
+        ["","",""],
+        ["","",""]
     ]
     //勝ち負けの判定
     let hoge =[
@@ -59,9 +59,10 @@ window.addEventListener('DOMContentLoaded', () => {// ページ読込後に実�
                         }else{
                             self.style.color = 'blue';
                         }
+                        
                      
                         
-                    //駒が置けるか置けないかの判定
+                     //駒が置けるか置けないかの判定
                      const judge = (le_val,sc_val=[],sel_val,index_1,index_2) =>{
                         if(le_val === "◎" && sc_val[index_1][index_2] !=="◎"){
                             //◎が指定された場合駒が置けるかどうか
@@ -104,6 +105,36 @@ window.addEventListener('DOMContentLoaded', () => {// ページ読込後に実�
                         }
                         score[index_1][index_2] = level;
                      }
+                     td.addEventListener('contextmenu',function(){
+                        switch(self.className){
+                            case "cell 0-0":
+                            //    let va = score[0][0]
+                            //    pl_1.push(va);
+                            alert("a")
+                            break;
+                            case "cell 0-1":
+                            break;
+                            case "cell 0-2":
+                            break;
+                            case "cell 1-0":
+                            break;
+                            case "cell 1-1":
+                            break;
+                            case "cell 1-2":
+                            break;
+                            case "cell 2-0":
+                            break;
+                            case "cell 2-1":
+                            break;
+                            case "cell 2-2":
+                            break;
+                        }
+                        // for(let i = 0;i < 3;i++){
+                        //     for(let f = 0;f < 3;f++){
+                        //         self.textContent = score[i][f]
+                        //     }
+                        // }
+                     })
 
                         switch(self.className){
                             case "cell 0-0":
@@ -187,49 +218,51 @@ window.addEventListener('DOMContentLoaded', () => {// ページ読込後に実�
                             }
                             
                         }
-        if(pl_1.length == 0 && pl_2.length == 0){
-            alert("お互いの駒がなくなりました")
-        }
+                        if(pl_1.length == 0 && pl_2.length == 0){
+                            alert("お互いの駒がなくなりました")
+                        }
                         
-    // //勝ち負けの判定(オレンジ)
-    // if(hoge[0][0] == "r" && hoge[0][1] == "r" && hoge[0][2] == "r"){
-    //     alert("オレンジの勝ち")
-    // }else if(hoge[1][0] == "r" && hoge[1][1] == "r" && hoge[1][2] == "r"){
-    //     alert("オレンジの勝ち")
-    // }else if(hoge[2][0] == "r" && hoge[2][1] == "r" && hoge[2][2] == "r"){
-    //     alert("オレンジの勝ち")
-    // }else if(hoge[0][0] == "r" && hoge[1][0] == "r" && hoge[2][0] == "r"){
-    //     alert("オレンジの勝ち")
-    // }else if(hoge[0][1] == "r" && hoge[1][1] == "r" && hoge[2][1] == "r"){
-    //     alert("オレンジの勝ち")
-    // }else if(hoge[0][2] == "r" && hoge[1][2] == "r" && hoge[2][2] == "r"){
-    //     alert("オレンジの勝ち")
-    // }else if(hoge[0][0] == "r" && hoge[1][1] == "r" && hoge[2][2] == "r"){
-    //     alert("オレンジの勝ち")
-    // }
-    // //勝ち負けの判定(青)
-    // if(hoge[0][0] == "b" && hoge[0][1] == "b" && hoge[0][2] == "b"){
-    //     alert("青の勝ち")
-    // }else if(hoge[1][0] == "b" && hoge[1][1] == "b" && hoge[1][2] == "b"){
-    //     alert("青の勝ち")
-    // }else if(hoge[2][0] == "b" && hoge[2][1] == "b" && hoge[2][2] == "b"){
-    //     alert("青の勝ち")
-    // }else if(hoge[0][0] == "b" && hoge[1][0] == "b" && hoge[2][0] == "b"){
-    //     alert("青の勝ち")
-    // }else if(hoge[0][1] == "b" && hoge[1][1] == "b" && hoge[2][1] == "b"){
-    //     alert("青の勝ち")
-    // }else if(hoge[0][2] == "b" && hoge[1][2] == "b" && hoge[2][2] == "b"){
-    //     alert("青の勝ち")
-    // }else if(hoge[0][0] == "b" && hoge[1][1] == "b" && hoge[2][2] == "b"){
-    //     alert("青の勝ち")
-    // }
-    
-    // console.log(hoge)
+                        // //勝ち負けの判定(オレンジ)
+                        // if(hoge[0][0] == "r" && hoge[0][1] == "r" && hoge[0][2] == "r"){
+                        //     alert("オレンジの勝ち")
+                        // }else if(hoge[1][0] == "r" && hoge[1][1] == "r" && hoge[1][2] == "r"){
+                        //     alert("オレンジの勝ち")
+                        // }else if(hoge[2][0] == "r" && hoge[2][1] == "r" && hoge[2][2] == "r"){
+                        //     alert("オレンジの勝ち")
+                        // }else if(hoge[0][0] == "r" && hoge[1][0] == "r" && hoge[2][0] == "r"){
+                        //     alert("オレンジの勝ち")
+                        // }else if(hoge[0][1] == "r" && hoge[1][1] == "r" && hoge[2][1] == "r"){
+                        //     alert("オレンジの勝ち")
+                        // }else if(hoge[0][2] == "r" && hoge[1][2] == "r" && hoge[2][2] == "r"){
+                        //     alert("オレンジの勝ち")
+                        // }else if(hoge[0][0] == "r" && hoge[1][1] == "r" && hoge[2][2] == "r"){
+                        //     alert("オレンジの勝ち")
+                        // }
+                        // //勝ち負けの判定(青)
+                        // if(hoge[0][0] == "b" && hoge[0][1] == "b" && hoge[0][2] == "b"){
+                        //     alert("青の勝ち")
+                        // }else if(hoge[1][0] == "b" && hoge[1][1] == "b" && hoge[1][2] == "b"){
+                        //     alert("青の勝ち")
+                        // }else if(hoge[2][0] == "b" && hoge[2][1] == "b" && hoge[2][2] == "b"){
+                        //     alert("青の勝ち")
+                        // }else if(hoge[0][0] == "b" && hoge[1][0] == "b" && hoge[2][0] == "b"){
+                        //     alert("青の勝ち")
+                        // }else if(hoge[0][1] == "b" && hoge[1][1] == "b" && hoge[2][1] == "b"){
+                        //     alert("青の勝ち")
+                        // }else if(hoge[0][2] == "b" && hoge[1][2] == "b" && hoge[2][2] == "b"){
+                        //     alert("青の勝ち")
+                        // }else if(hoge[0][0] == "b" && hoge[1][1] == "b" && hoge[2][2] == "b"){
+                        //     alert("青の勝ち")
+                        // }
+                        
+                        // console.log(hoge)
 
-                        // alert(level)
-                        
-                        // console.log(score)
+                                            // alert(level)
+                                            
+                                            // console.log(score)
                     },option);
+
+
         }
         board.appendChild(tr);
     }
