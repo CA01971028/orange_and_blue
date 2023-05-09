@@ -67,7 +67,6 @@ window.addEventListener('DOMContentLoaded', () => {// ページ読込後に実�
                             if(count % 2 == 0 && pl_1.includes("◎")){
                                 hoge[index_1][index_2] = "r";
                                 sel_val.textContent = le_val;
-                                console.log("最初の処理です")
                             }else if(count % 2 == 1 && pl_2.includes("◎")){
                                 hoge[index_1][index_2] = "b";
                                 sel_val.textContent = le_val;
@@ -80,7 +79,6 @@ window.addEventListener('DOMContentLoaded', () => {// ページ読込後に実�
                             if(count % 2 == 0 && pl_1.includes("〇")){
                                 hoge[index_1][index_2] = "r";
                                 sel_val.textContent = le_val;
-                                console.log("最初の処理です")
                             }else if(count % 2 == 1 && pl_2.includes("〇")){
                                 hoge[index_1][index_2] = "b";
                                 sel_val.textContent = le_val;
@@ -92,7 +90,6 @@ window.addEventListener('DOMContentLoaded', () => {// ページ読込後に実�
                             if(count % 2 == 0 && pl_1.includes("△")){
                                 hoge[index_1][index_2] = "r";
                                 sel_val.textContent = le_val;
-                                console.log("最初の処理です")
                             }else if(count % 2 == 1 && pl_2.includes("△")){
                                 hoge[index_1][index_2] = "b";
                                 sel_val.textContent = le_val;
