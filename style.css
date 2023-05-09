@@ -1,6 +1,22 @@
+/*sub.html*/
 #st {
-  font-size: 50px;
+  font-size: 60px;
   text-align: center;
+  margin-bottom: 5px;
+  margin-top: -20px;
+}
+
+a.btn-border {
+  color: #000;
+  border: 3px solid #000;
+  border-radius: 0;
+  background: #fff;
+  font-size: 40px;
+}
+
+a.btn-border:hover {
+  color: #fff;
+  background: #000;
 }
 
 #la {
@@ -9,7 +25,7 @@
 
 #img {
   text-align: center;
-  background-color: rgb(87, 92, 97);
+  background-color: rgb(115, 173, 243);
 }
 
 #mg {
@@ -18,12 +34,8 @@
 
 .label {
   font-size: 50px;
-  margin-left: 10px;
-  display: inline-block;
-  background: linear-gradient(180deg, #0072b4 0%, #7bc0be 72%, #afebea 100%);
-  background: -webkit-linear-gradient(-45deg, #fed878 0%, #4a5ae7 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  text-shadow: 5px 3px 3px blue;
+  color: orange;
 }
 
 /*index.html*/
@@ -95,15 +107,15 @@ td {
 
 #bg_1 {
   background-color: grey;
+  width: 250px;
   font-size: 40px;
-  width: 300px;
   text-align: center;
   margin: auto;
 }
 
 #bg_2 {
   background-color: grey;
-  width: 300px;
+  width: 250px;
   font-size: 40px;
   text-align: center;
   margin: auto;
@@ -122,4 +134,4 @@ td {
   font-size: 30px;
   color: red;
   margin-left: 30%;
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */
