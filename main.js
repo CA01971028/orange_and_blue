@@ -64,6 +64,7 @@ window.addEventListener('DOMContentLoaded', () => {// ページ読込後に実�
                     //駒が置けるか置けないかの判定
                      const judge = (le_val,sc_val=[],sel_val,index_1,index_2) =>{
                         if(le_val === "◎" && sc_val[index_1][index_2] !=="◎"){
+                            //◎が指定された場合駒が置けるかどうか
                             if(count % 2 == 0 && pl_1.includes("◎")){
                                 hoge[index_1][index_2] = "r";
                                 sel_val.textContent = le_val;
@@ -76,6 +77,7 @@ window.addEventListener('DOMContentLoaded', () => {// ページ読込後に実�
                             count++
                             console.log(hoge)
                         }else if(le_val === "〇" && (sc_val[index_1][index_2] !== "〇" && sc_val[index_1][index_2] !== "◎")){
+                            //〇が指定された場合駒が置けるかどうか
                             if(count % 2 == 0 && pl_1.includes("〇")){
                                 hoge[index_1][index_2] = "r";
                                 sel_val.textContent = le_val;
@@ -86,7 +88,8 @@ window.addEventListener('DOMContentLoaded', () => {// ページ読込後に実�
                                 alert("駒がありません")
                             }
                             count++
-                        }else if(le_val === "△" && sc_val[index_1][index_2] == 0){
+                        }else if(le_val === "△" && sc_val[index_1][index_2] == 0 && sc_val[index_1][index_2] != "△"){
+                            //△が指定された場合、駒が置けるかどうか
                             if(count % 2 == 0 && pl_1.includes("△")){
                                 hoge[index_1][index_2] = "r";
                                 sel_val.textContent = le_val;
@@ -97,6 +100,7 @@ window.addEventListener('DOMContentLoaded', () => {// ページ読込後に実�
                                 alert("駒がありません")
                             }
                             count++
+                            console.log(count)
                         }
                         score[index_1][index_2] = level;
                      }
@@ -160,24 +164,32 @@ window.addEventListener('DOMContentLoaded', () => {// ページ読込後に実�
                            }
                         if(count % 2 == 1){
                             var index = pl_1.indexOf(level);
-                            pl_1.splice(index,1);
-                            console.log(pl_1)
-                            console.log("二回目の処理です")
-                            p_1 = "";
-                            pl_1.forEach(function(value) {
-                                p_1 += value;
-                            })
-                            player_1.textContent = p_1;
+                            if(index != -1){
+                                pl_1.splice(index,1);
+                                console.log(pl_1)
+                                p_1 = "";
+                                pl_1.forEach(function(value) {
+                                    p_1 += value;
+                                })
+                                player_1.textContent = p_1;
+                            }
+                           
                         }else{
                             var index = pl_2.indexOf(level);
-                            pl_2.splice(index,1);
+                            if(index != -1){
+                                pl_2.splice(index,1);
                             console.log(pl_2)
                             p_2 = "";
                             pl_2.forEach(function(value) {
                                 p_2 += value;
                             })
                             player_2.textContent = p_2;
+                            }
+                            
                         }
+        if(pl_1.length == 0 && pl_2.length == 0){
+            alert("お互いの駒がなくなりました")
+        }
                         
     // //勝ち負けの判定(オレンジ)
     // if(hoge[0][0] == "r" && hoge[0][1] == "r" && hoge[0][2] == "r"){
