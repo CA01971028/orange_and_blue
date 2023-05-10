@@ -122,4 +122,46 @@ td {
   font-size: 30px;
   color: red;
   margin-left: 30%;
+}
+
+#canvasContainer {
+  position: relative;
+  width: 120%;
+  height: 120%;
+}
+
+#myCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#overlayDiv {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  z-index: 2;
+  padding: 10px;
+  width: 80%;
+  height: 100%;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+}
+
+#canvas {
+  width: 100%;
+  height: 100%;
+  background: #04BBD3;
+  opacity: 50%;
+}
+
+#con-tex {
+  display: inline;
 }/*# sourceMappingURL=style.css.map */
