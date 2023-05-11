@@ -193,9 +193,11 @@ window.addEventListener('DOMContentLoaded', () => {// ページ読込後に実�
                            if(count % 2 == 0){
                                turn.textContent ="オレンジのターン";
                                turn_text.style.color = "red";
+                               console.log("色が赤に変えられました")
                            }else{
                                turn.textContent ="青のターン";
                                turn_text.style.color = "blue";
+                               console.log("色が青に変えられました")
                            }
                         //手持ちの駒を消す
                         //プレイヤー1（上の赤の持ち駒）
