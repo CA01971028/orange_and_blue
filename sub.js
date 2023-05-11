@@ -16,5 +16,5 @@ gb.src = "image/orange.png";
 //event処理（ルール）
 var btn = document.querySelector('#button');
 btn.addEventListener('click',function(){
-    alert("a")
+    alert("・自分のコマを盤面の空いている場所に置くことができる。\n・自分のコマより小さいコマに被せて隠すことができる。\n・自分のコマに、さらに自分のコマを被せることもできる。\n・持ち駒のほか、既に盤面に置いた「見えている自分のコマ」を動かすこともできる。")
 })
