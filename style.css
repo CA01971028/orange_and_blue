@@ -139,7 +139,7 @@ td {
 
 #overlayDiv {
   position: absolute;
-  top: 50px;
+  top: -7px;
   left: 50px;
   z-index: 2;
   padding: 10px;
