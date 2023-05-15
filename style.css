@@ -133,7 +133,7 @@ td {
   display: inline-block;
   font-size: 30px;
   color: red;
-  margin-left: 30%;
+  margin-left: 3%;
 }
 
 #canvasContainer {
@@ -174,9 +174,10 @@ html, body {
 }
 
 #con-tex {
-  display: inline;
+  display: flex;
+  margin-top: 42px;
 }
 
 #no {
-  margin: 20px;
+  margin-left: 38%;
 }/*# sourceMappingURL=style.css.map */
