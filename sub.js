@@ -18,3 +18,13 @@ var btn = document.querySelector('#button');
 btn.addEventListener('click',function(){
     alert("・自分のコマを盤面の空いている場所に置くことができる。\n・自分のコマより小さいコマに被せて隠すことができる。\n・自分のコマに、さらに自分のコマを被せることもできる。\n・持ち駒のほか、既に盤面に置いた「見えている自分のコマ」を動かすこともできる。")
 })
+
+function changeBackgroundColor() {
+    var colors = ["#FF5733", "#C70039", "#900C3F", "#581845"];
+    var currentColor = 0;
+    setInterval(function() {
+      currentColor = (currentColor + 1) % colors.length;
+      document.body.style.backgroundColor = colors[currentColor];
+    }, 1000);
+  }
+  
