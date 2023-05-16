@@ -15,15 +15,22 @@
     
     <div id="img">
         <img id="mg" src="image/orange.png" alt="画像" width="40%" height="60%">
+        <div id="message">
+            ・自分のコマを盤面の空いている場所に置くことができる。<br>
+            ・自分のコマより小さいコマに被せて隠すことができる。<br>
+            ・自分のコマに、さらに自分のコマを被せることもできる。<br>
+            ・持ち駒のほか、既に盤面に置いた「見えている自分のコマ」を動かすこともできる。
+        </div>
         <div id="st">    
-            <div id="container">
-                <div class="answer">
-                    <a href="index.html" class="btn cubic"><span class="hovering">START</span><span class="default">START</span></a>
-                </div>
+            <div class="answer">
+                <a href="index.html" class="btn cubic"><span class="hovering">START</span><span class="default">START</span></a>
             </div>
         </div>
     </div>
-    <div id="bu"><button id="button">ルール</button></div>
+    <div id="bu">
+        <!-- <button id="button">ルール</button> -->
+        <button onclick="toggleMessage()">ルール</button>
+    </div>
 </body>
 <script src="sub.js"></script>
 </html>

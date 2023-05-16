@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*sub.html*/
 #st {
   font-size: 40px;
@@ -7,8 +8,8 @@
   vertical-align: -1000%;
 }
 
-#container {
-  text-align: center;
+#message {
+  display: none; /* 最初は非表示にする */
 }
 
 .answer .btn {
@@ -19,8 +20,8 @@
   width: 350px;
   height: 50px;
   margin: 0 auto;
-  margin-top: 15px;
-  margin-bottom: -20px;
+  margin-top: 20px;
+  margin-bottom: -15px;
   cursor: pointer;
 }
 
@@ -64,7 +65,7 @@
 
 #img {
   text-align: center;
-  background-color: rgb(115, 173, 243);
+  background-color: #04BBD3;
 }
 
 #mg {
