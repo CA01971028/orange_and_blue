@@ -4,12 +4,13 @@
   font-size: 40px;
   text-align: center;
   margin-bottom: 5px;
-  margin-top: -25px;
+  margin-top: -20px;
   vertical-align: -1000%;
 }
 
 #message {
   display: none; /* 最初は非表示にする */
+  text-align: left;
 }
 
 .answer .btn {
