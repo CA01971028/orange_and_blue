@@ -8,8 +8,8 @@
   vertical-align: -1000%;
 }
 
-#message {
-  text-align: left;
+#text {
+  display: none;
 }
 
 #mg_ {
