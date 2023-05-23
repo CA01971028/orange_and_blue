@@ -7,8 +7,10 @@
     vertical-align:-1000%;
 }
 #message {
-  display: none; /* 最初は非表示にする */
   text-align: left;
+}
+#mg_{
+  display: inline;
 }
 .answer .btn {
   position: relative;
@@ -52,7 +54,8 @@
   transform: rotateX(-90deg);
 }
 #la{
-    text-align: center;;
+    text-align: center;
+    border-bottom: solid 5px black;
 }
 #img{
   text-align: center;
@@ -60,7 +63,6 @@
 }
 #mg{
     margin-top:10px;
-    
 }
 .label{
     font-size: 50px;
@@ -205,4 +207,19 @@
 #sp{
   margin-left:60px;
 }
-  
+.flex {
+  display: flex; /*横並び*/
+}
+.flex .image {
+  width: 640px; /*画像サイズ指定*/
+  margin: 0;
+  padding: 0;
+}
+.flex .image img {
+  width: 100%;
+  height: auto;
+}
+.flex .text {
+  margin: 0 0 0 20px;
+  padding: 0;
+}

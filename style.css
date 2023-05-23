@@ -9,8 +9,11 @@
 }
 
 #message {
-  display: none; /* 最初は非表示にする */
   text-align: left;
+}
+
+#mg_ {
+  display: inline;
 }
 
 .answer .btn {
@@ -62,6 +65,7 @@
 
 #la {
   text-align: center;
+  border-bottom: solid 5px black;
 }
 
 #img {
@@ -225,4 +229,24 @@ html, body {
 
 #sp {
   margin-left: 60px;
+}
+
+.flex {
+  display: flex; /*横並び*/
+}
+
+.flex .image {
+  width: 640px; /*画像サイズ指定*/
+  margin: 0;
+  padding: 0;
+}
+
+.flex .image img {
+  width: 100%;
+  height: auto;
+}
+
+.flex .text {
+  margin: 0 0 0 20px;
+  padding: 0;
 }/*# sourceMappingURL=style.css.map */
