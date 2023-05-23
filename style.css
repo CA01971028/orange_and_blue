@@ -8,8 +8,11 @@
   vertical-align: -1000%;
 }
 
-#text {
+#myText {
   display: none;
+  text-align: left;
+  margin-left: 0%;
+  font-size: 40px;
 }
 
 #mg_ {
@@ -21,7 +24,7 @@
   display: inline-block;
   transform-style: preserve-3d;
   perspective: 1000px;
-  width: 350px;
+  width: 650px;
   height: 50px;
   margin: 0 auto;
   margin-top: 20px;
@@ -75,6 +78,7 @@
 
 #mg {
   margin-top: 10px;
+  margin-left: 83%;
 }
 
 .label {
