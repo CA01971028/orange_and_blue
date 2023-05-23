@@ -164,33 +164,46 @@ window.addEventListener('DOMContentLoaded', ()=>{
                     }
 
                 }
-                const right_click = (index__1,index__2,af,af_co,ce)=>{
+                const right_click = (index__1,index__2,af,af_co,)=>{
                     if (count % 2 == 0) {
-                        var va1 = score[index__1][index__2];
-                        pl_1.push(va1);
-                        if (af == "") {
-                            score[index__1][index__2] = "";
-                            hoge[index__1][index__2] = "";
-                        } else {
-                            score[index__1][index__2] = af;
-                            hoge[index__1][index__2] = af_co;
+                        if(hoge[index__1][index__2] == "r"){
+                            var va1 = score[index__1][index__2];
+                            pl_1.push(va1);
+                            if (af == "") {
+                                score[index__1][index__2] = "";
+                                hoge[index__1][index__2] = "";
+                            } else {
+                                score[index__1][index__2] = af;
+                                hoge[index__1][index__2] = af_co;
+                                self.textContent = af;
+                            }
+                        }else{
+                            alert('相手の駒を取ることはできません')
                         }
                     } else if (count % 2 == 1) {
-                        var va2 = score[index__1][index__2];
-                        pl_2.push(va2);
-                        if (af == "") {
-                            score[index__1][index__2] = "";
-                            hoge[index__1][index__2] = "";
-                        } else {
-                            score[index__1][index__2] = af;
-                            hoge[index__1][index__2] = af_co;
+                        if(hoge[index__1][index__2] =="b"){
+                            var va2 = score[index__1][index__2];
+                            pl_2.push(va2);
+                            if (af == "") {
+                                score[index__1][index__2] = "";
+                                hoge[index__1][index__2] = "";
+                            } else {
+                                score[index__1][index__2] = af;
+                                hoge[index__1][index__2] = af_co;
+                                self.textContent = af;
+                            }
+                        }else{
+                            alert('相手の駒を取ることはできません')
                         }
+                        
                     }
                     if(hoge[index__1][index__2] == "r"){
-                        ce.style.color = "red";
+                        self.style.color = "red";
                     }else if(hoge[index__1][index__2] == "b"){
-                        ce.style.color = "blue";
+                        self.style.color = "blue";
                     }
+                    //勝ち負けの判定
+                    jud();
                 }
                 //右クリックの動作の導入
                 td.addEventListener('contextmenu', function() {
@@ -198,8 +211,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
                     case "cell 0-0":
                         var index__1 = 0;
                         var index__2 = 0;
-                        right_click(index__1, index__2, af_00, af_co00,'cell 0-0')
-                        self.textContent = af_00;
+                        right_click(index__1, index__2, af_00, af_co00,)
                         console.log(hoge)
                         console.log(score)
                         break;
@@ -207,49 +219,41 @@ window.addEventListener('DOMContentLoaded', ()=>{
                         var index__1 = 1;
                         var index__2 = 0;
                         right_click(index__1, index__2, af_10, af_co10);
-                        self.textContent = af_10;
                         break;
                     case "cell 0-2":
                         var index__1 = 2;
                         var index__2 = 0;
                         right_click(index__1, index__2, af_20, af_co20);
-                        self.textContent = af_20;
                         break;
                     case "cell 1-0":
                         var index__1 = 0;
                         var index__2 = 1;
                         right_click(index__1, index__2, af_01, af_co01);
-                        self.textContent = af_01;
                         break;
                     case "cell 1-1":
                         var index__1 = 1;
                         var index__2 = 1;
                         right_click(index__1, index__2, af_11, af_co11);
-                        self.textContent = af_11;
                         break;
                     case "cell 1-2":
                         var index__1 = 2;
                         var index__2 = 1;
                         right_click(index__1, index__2, af_21, af_co21);
-                        self.textContent = af_21;
                         break;
                     case "cell 2-0":
                         var index__1 = 0;
                         var index__2 = 2;
                         right_click(index__1, index__2, af_02, af_co02);
-                        self.textContent = af_02;
                         break;
                     case "cell 2-1":
                         var index__1 = 1;
                         var index__2 = 2;
                         right_click(index__1, index__2, af_12, af_co12);
-                        self.textContent = af_12;
                         break;
                     case "cell 2-2":
                         var index__1 = 2;
                         var index__2 = 2;
                         right_click(index__1, index__2, af_22, af_co22);
-                        self.textContent = af_22;
                         break;
                     }
                     // for(let i = 0;i < 3;i++){
@@ -391,40 +395,42 @@ window.addEventListener('DOMContentLoaded', ()=>{
                 if (pl_1.length == 0 && pl_2.length == 0) {
                     alert("お互いの駒がなくなりました")
                 }
+                function jud(){
+                    //勝ち負けの判定(オレンジ)
+                    if(hoge[0][0] == "r" && hoge[0][1] == "r" && hoge[0][2] == "r"){
+                        alert("オレンジの勝ち")
+                    }else if(hoge[1][0] == "r" && hoge[1][1] == "r" && hoge[1][2] == "r"){
+                        alert("オレンジの勝ち")
+                    }else if(hoge[2][0] == "r" && hoge[2][1] == "r" && hoge[2][2] == "r"){
+                        alert("オレンジの勝ち")
+                    }else if(hoge[0][0] == "r" && hoge[1][0] == "r" && hoge[2][0] == "r"){
+                        alert("オレンジの勝ち")
+                    }else if(hoge[0][1] == "r" && hoge[1][1] == "r" && hoge[2][1] == "r"){
+                        alert("オレンジの勝ち")
+                    }else if(hoge[0][2] == "r" && hoge[1][2] == "r" && hoge[2][2] == "r"){
+                        alert("オレンジの勝ち")
+                    }else if(hoge[0][0] == "r" && hoge[1][1] == "r" && hoge[2][2] == "r"){
+                        alert("オレンジの勝ち")
+                    }
+                    //勝ち負けの判定(青)
+                    if(hoge[0][0] == "b" && hoge[0][1] == "b" && hoge[0][2] == "b"){
+                        alert("青の勝ち")
+                    }else if(hoge[1][0] == "b" && hoge[1][1] == "b" && hoge[1][2] == "b"){
+                        alert("青の勝ち")
+                    }else if(hoge[2][0] == "b" && hoge[2][1] == "b" && hoge[2][2] == "b"){
+                        alert("青の勝ち")
+                    }else if(hoge[0][0] == "b" && hoge[1][0] == "b" && hoge[2][0] == "b"){
+                        alert("青の勝ち")
+                    }else if(hoge[0][1] == "b" && hoge[1][1] == "b" && hoge[2][1] == "b"){
+                        alert("青の勝ち")
+                    }else if(hoge[0][2] == "b" && hoge[1][2] == "b" && hoge[2][2] == "b"){
+                        alert("青の勝ち")
+                    }else if(hoge[0][0] == "b" && hoge[1][1] == "b" && hoge[2][2] == "b"){
+                        alert("青の勝ち")
+                    }
 
-                // //勝ち負けの判定(オレンジ)
-                // if(hoge[0][0] == "r" && hoge[0][1] == "r" && hoge[0][2] == "r"){
-                //     alert("オレンジの勝ち")
-                // }else if(hoge[1][0] == "r" && hoge[1][1] == "r" && hoge[1][2] == "r"){
-                //     alert("オレンジの勝ち")
-                // }else if(hoge[2][0] == "r" && hoge[2][1] == "r" && hoge[2][2] == "r"){
-                //     alert("オレンジの勝ち")
-                // }else if(hoge[0][0] == "r" && hoge[1][0] == "r" && hoge[2][0] == "r"){
-                //     alert("オレンジの勝ち")
-                // }else if(hoge[0][1] == "r" && hoge[1][1] == "r" && hoge[2][1] == "r"){
-                //     alert("オレンジの勝ち")
-                // }else if(hoge[0][2] == "r" && hoge[1][2] == "r" && hoge[2][2] == "r"){
-                //     alert("オレンジの勝ち")
-                // }else if(hoge[0][0] == "r" && hoge[1][1] == "r" && hoge[2][2] == "r"){
-                //     alert("オレンジの勝ち")
-                // }
-                // //勝ち負けの判定(青)
-                // if(hoge[0][0] == "b" && hoge[0][1] == "b" && hoge[0][2] == "b"){
-                //     alert("青の勝ち")
-                // }else if(hoge[1][0] == "b" && hoge[1][1] == "b" && hoge[1][2] == "b"){
-                //     alert("青の勝ち")
-                // }else if(hoge[2][0] == "b" && hoge[2][1] == "b" && hoge[2][2] == "b"){
-                //     alert("青の勝ち")
-                // }else if(hoge[0][0] == "b" && hoge[1][0] == "b" && hoge[2][0] == "b"){
-                //     alert("青の勝ち")
-                // }else if(hoge[0][1] == "b" && hoge[1][1] == "b" && hoge[2][1] == "b"){
-                //     alert("青の勝ち")
-                // }else if(hoge[0][2] == "b" && hoge[1][2] == "b" && hoge[2][2] == "b"){
-                //     alert("青の勝ち")
-                // }else if(hoge[0][0] == "b" && hoge[1][1] == "b" && hoge[2][2] == "b"){
-                //     alert("青の勝ち")
-                // }
-
+                }
+                jud()
                 // console.log(hoge)
 
                 // alert(level)

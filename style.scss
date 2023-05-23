@@ -85,7 +85,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    height: 43vh;
+    width:280px;
   }
   #container {
     padding: 10px;
@@ -222,4 +223,9 @@
 .flex .text {
   margin: 0 0 0 20px;
   padding: 0;
+}
+#text-detail{
+  font-size:20px;
+  margin-top:180px;
+  margin-left:100px;
 }
