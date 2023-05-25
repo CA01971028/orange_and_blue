@@ -67,4 +67,24 @@ body{
   .title_2{
     margin-left:170px;
   }
-  
+  #dai{
+    position:absolute;
+    color:white;
+    margin-left:200px;
+    margin-top: 20px;
+    font-size:50px;
+    font-family:Arial;
+    animation-name:move_dai;
+    animation-duration:2s;
+    animation-fill-mode:forwards;
+  }
+  @keyframes move_dai{
+    0%{
+      font-size:20px;
+      color:rgb(58, 55, 50);
+    }
+    100%{
+      font-size:50px;
+      color:rgb(255, 255, 255);
+    }
+  }

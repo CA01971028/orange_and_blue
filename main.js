@@ -77,8 +77,10 @@ window.addEventListener('DOMContentLoaded', ()=>{
                 //赤と青の色の変化
                 if (count % 2 == 0) {
                     self.style.color = 'red';
-                } else {
+                    console.log("赤色に変わりました")
+                } else if(count % 2 == 1){
                     self.style.color = 'blue';
+                    console.log("青色に変わりました")
                 }
 
                 //駒が置けるか置けないかの判定
@@ -162,6 +164,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
                             alert("駒がありません")
                         }
                     }
+                    console.log(count)
 
                 }
                 const right_click = (index__1,index__2,af,af_co,)=>{
