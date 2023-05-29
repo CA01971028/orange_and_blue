@@ -15,14 +15,8 @@
     
     <div id="img">
         <span>
-            <div class="flex">
-                <figure class="image"><img src="image/orange.png" id="mg" width="400" height="300"></figure>
-                  <p class="text">・自分のコマを盤面の空いている場所に置くことができる。<br>
-                    ・自分のコマより小さいコマに被せて隠すことができる。<br>
-                    ・自分のコマに、さらに自分のコマを被せることもできる。<br>
-                    ・持ち駒のほか、既に盤面に置いた「見えている自分のコマ」を動かすこともできる。(自分以外の駒を取ったり動かしたりすることはできない)<br>
-                    ・縦、横、斜めのいずれかに同じ色が３つ並び次第ゲームの勝敗が決する。<br>
-                    ※いかなることがあろうと、故意的不正がある場合は無効試合となる。※</p>
+            <div class="">
+                <figure class="image"><img src="image/orange.png" id="mg" width="500" height="400"></figure>
             </div>
         </span>
         <div id="st">    
@@ -32,8 +26,33 @@
         </div>
     </div>
     <div id="bu">
-        <!-- <button id="button">ルール</button> -->
-        <button onclick="toggleMessage()">ルール</button>
+        <script src="https://code.jquery.com/jquery.min.js"></script>
+<script>
+$(function() {
+    $(".D").click(function() {
+        $(".E").slideToggle("");
+    });
+});
+</script>
+<style>
+.D{
+    display: inline-block;
+    background: #b6beff;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.E{
+    background: #ffaf74;
+    height: 150px;
+}
+</style>
+<div class="D">ルール</div>
+<div class="E"><p class="text">・自分のコマを盤面の空いている場所に置くことができる。<br>
+    ・自分のコマより小さいコマに被せて隠すことができる。<br>
+    ・自分のコマに、さらに自分のコマを被せることもできる。<br>
+    ・持ち駒のほか、既に盤面に置いた「見えている自分のコマ」を動かすこともできる。(自分以外の駒を取ったり動かしたりすることはできない)<br>
+    ・縦、横、斜めのいずれかに同じ色が３つ並び次第ゲームの勝敗が決する。<br>
+    ※いかなることがあろうと、故意的不正がある場合は無効試合となる。※</p></div>
     </div>
 </body>
 <script src="sub.js"></script>
