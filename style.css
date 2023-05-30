@@ -222,6 +222,10 @@ td {
   margin-left: 3%;
 }
 
+.cell {
+  color: red;
+}
+
 #canvasContainer {
   position: relative;
   width: 120%;
