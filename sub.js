@@ -14,23 +14,6 @@ gb.src = "image/orange.png";
 // draw()
 
 //event処理（ルール）
-// var btn = document.querySelector('#button');
-// btn.addEventListener('click',function(){
-//     alert("・自分のコマを盤面の空いている場所に置くことができる。\n・自分のコマより小さいコマに被せて隠すことができる。\n・自分のコマに、さらに自分のコマを被せることもできる。\n・持ち駒のほか、既に盤面に置いた「見えている自分のコマ」を動かすこともできる。")
-// })
-
-  // var message = document.getElementById("text");
-  // var button = document.getElementsByTagName("button")[0];
-
-  // function toggleMessage() {
-  //   if (message.style.display === "none") {
-  //     message.style.display = "block";
-  //     button.textContent = "非表示にする";
-  //   } else {
-  //     message.style.display = "none";
-  //     button.textContent = "ルール";
-  //   }
-  // }
 
 // ボタン要素を取得します
 var button = document.getElementById('myButton');
@@ -46,4 +29,12 @@ button.addEventListener('click', function() {
   } else {
     text.style.display = 'none'; // テキストを非表示にします
   }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  // 2秒後にロード画面を非表示にする
+  setTimeout(function() {
+    var loadingScreen = document.getElementById("loading-container");
+    loadingScreen.style.display = "none";
+  }, 1000);
 });

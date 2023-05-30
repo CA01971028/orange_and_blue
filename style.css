@@ -1,5 +1,39 @@
 @charset "UTF-8";
 /*sub.html*/
+#loading-container {
+  /* ローディング画面のコンテナのスタイルを指定する */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(231, 230, 230, 0.5); /* 半透明の背景色 */
+  z-index: 9999; /* 他の要素よりも手前に表示するためのz-index値 */
+}
+
+.loading__icon {
+  position: absolute;
+  top: 35%;
+  left: 41.5%;
+  width: min(50vw, 250px);
+  height: min(50vw, 250px);
+  border-radius: 50%;
+  border: 5px solid;
+  border-color: orange #ffedcc #ffedcc;
+}
+
+.loading__icon {
+  animation: loading-rotate 3s infinite linear;
+}
+
+@keyframes loading-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 #st {
   font-size: 40px;
   text-align: center;
