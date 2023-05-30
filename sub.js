@@ -27,4 +27,6 @@ function changeBackgroundColor() {
       document.body.style.backgroundColor = colors[currentColor];
     }, 1000);
   }
+
+  
   

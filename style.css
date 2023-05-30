@@ -1,38 +1,76 @@
+@charset "UTF-8";
 /*sub.html*/
 #st {
-  font-size: 60px;
+  font-size: 40px;
   text-align: center;
   margin-bottom: 5px;
   margin-top: -20px;
+  vertical-align: -1000%;
 }
 
-a.btn-border {
-  color: #000;
-  border: 3px solid #000;
-  border-radius: 0;
-  background: #fff;
-  font-size: 40px;
+#text {
+  display: none;
 }
 
-.btn-text-3d{
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 50px;
-  color: #f52c4d;
-  text-shadow: 0px 4px 2px rgba(0, 0, 0, 0.32), 0px 1px 0px #6182ca, 0px 2px 0px #4f6aa7, 0px 3px 0px #5470ad;
-}
-.btn-text-3d{
-  top: 4px;
-  text-shadow: none;
+#mg_ {
+  display: inline;
 }
 
+.answer .btn {
+  position: relative;
+  display: inline-block;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  width: 350px;
+  height: 50px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: -15px;
+  cursor: pointer;
+}
+
+.answer .btn.cubic span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  box-sizing: border-box;
+  line-height: 48px;
+  text-align: center;
+  transition: all 0.3s;
+  transform-origin: center center -25px;
+}
+
+.answer .btn.cubic .hovering {
+  background-color: black;
+  color: white;
+  transform: rotateX(90deg);
+}
+
+.answer .btn.cubic .default {
+  background-color: white;
+  color: black;
+  transform: rotateX(0);
+}
+
+.answer .btn.cubic:hover .hovering {
+  transform: rotateX(0);
+}
+
+.answer .btn.cubic:hover .default {
+  transform: rotateX(-90deg);
+}
 
 #la {
   text-align: center;
+  border-bottom: solid 5px black;
 }
 
 #img {
   text-align: center;
+  background-color: #04BBD3;
 }
 
 #mg {
@@ -55,7 +93,8 @@ a.btn-border {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50vh;
+  height: 43vh;
+  width: 280px;
 }
 
 #container {
@@ -140,7 +179,7 @@ td {
   display: inline-block;
   font-size: 30px;
   color: red;
-  margin-left: 30%;
+  margin-left: 3%;
 }
 
 #canvasContainer {
@@ -159,7 +198,6 @@ td {
 #overlayDiv {
   position: absolute;
   top: -7px;
-  left: 50px;
   z-index: 2;
   padding: 10px;
   width: 80%;
@@ -182,26 +220,43 @@ html, body {
 }
 
 #con-tex {
-  display: inline;
-}/*# sourceMappingURL=style.css.map */
-
-
-body {
-  background: -moz-linear-gradient(45deg, #02e1ba 0%, #26c9f2 29%, #43f017 66%, #fbff1c 100%);
-  background: -webkit-linear-gradient(45deg, #02e1ba 0%,#26c9f2 29%,#43f017 66%,#fdff1c 100%);
-  background: linear-gradient(45deg, #02e1ba 0%,#26c9f2 29%,#43f017 66%,#fdff1c 100%);
-  background-size: 400% 400%;
-  -webkit-animation: Gradient 15s ease infinite;
--moz-animation: Gradient 15s ease infinite;
-animation: Gradient 15s ease infinite;
-/*min-height: calc(100vh - 2rem);*/
-display: flex;
-flex-direction: column;
-align-items: stretch;
-justify-content: space-evenly;
-overflow: hidden;
-position: relative; 
+  display: flex;
+  margin-top: 42px;
 }
+
+#no {
+  margin-left: 24%;
+}
+
+#sp {
+  margin-left: 60px;
+}
+
+.flex {
+  display: flex; /*横並び*/
+}
+
+.flex .image {
+  width: 640px; /*画像サイズ指定*/
+  margin: 0;
+  padding: 0;
+}
+
+.flex .image img {
+  width: 100%;
+  height: auto;
+}
+
+.flex .text {
+  margin: 0 0 0 20px;
+  padding: 0;
+}
+
+#text-detail {
+  font-size: 20px;
+  margin-top: 40px;
+  margin-left: 100px;
+}/*# sourceMappingURL=style.css.map */
 
 body::before, 
 body::after {
@@ -294,4 +349,3 @@ to {
 .st13{opacity:0.2;}
 .st14{clip-path:url(#SVGID_16_);}
 .st15{opacity:0.3;fill:#FFFFFF;enable-background:new    ;}
-
