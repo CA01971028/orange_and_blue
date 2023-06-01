@@ -368,3 +368,18 @@ setInterval(function() {
     elements[e].draw(ctx, time);
 }, 10);
 });
+
+let audio = null;
+
+function handleClick() {
+  audio = new Audio('maou_bgm_cyber44.mp3');
+  document.body.removeEventListener('click', handleClick);
+}
+
+document.body.addEventListener('click', handleClick);
+
+setInterval(() => {
+  if (audio) {
+    audio.play();
+  }
+}, 0);
