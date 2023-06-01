@@ -32,7 +32,7 @@ button.addEventListener('click', function() {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-  // 2秒後にロード画面を非表示にする
+  // 1秒後にロード画面を非表示にする
   setTimeout(function() {
     var loadingScreen = document.getElementById("loading-container");
     loadingScreen.style.display = "none";
