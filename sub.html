@@ -4,17 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>○×</title>
+    <title>orange_and_blue</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="sub.js">
+    <style>
+        body {
+          zoom: 0.9;
+          -moz-transform: scale(0.9);
+        }
+    </style>
 </head>
 <body>
 
-            <!-- ローディング画面 -->
-            <div id="loading-container">
-            <div id="loadingScreen" class="loading__icon">
-            </div>
-            </div>
+    <!-- ローディング画面 -->
+    <div id="loading-container">
+    <div id="loadingScreen" class="loading__icon">
+    </div>
+    </div>
+
+    <!-- 背景のアニメーション-->
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
 
     <div id="la"><span class="label label1">ORANGE</span>
         <span class="label label2">AND</span>
@@ -40,10 +51,13 @@
         </div>
     </div>
     <div id="bu">
-        <!-- <button id="button">ルール</button> -->
         <button id="myButton">ルール</button>
         <div id="title1"><a href="./title.html">タイトル画面に戻る</a></div>
     </div>
+
+    <audio src="bgm/bgm.mp3" autoplay loop>
+        あなたのブラウザーは <code>audio</code>要素をサポートしていません。
+    </audio>
 </body>
 <script src="sub.js"></script>
 </html>
