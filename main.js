@@ -89,7 +89,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
                             score[index_1][index_2] = level;
                             //赤と青の色の変化
                             if (count % 2 == 0) {
-                                self.style.color = 'red';
+                                self.style.color = 'orange';
                                 console.log("赤色に変わりました")
                             } else if(count % 2 == 1){
                                 self.style.color = 'blue';
@@ -136,7 +136,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
                             score[index_1][index_2] = level;
                             //赤と青の色の変化
                             if (count % 2 == 0) {
-                                self.style.color = 'red';
+                                self.style.color = 'orange';
                                 console.log("赤色に変わりました")
                             } else if(count % 2 == 1){
                                 self.style.color = 'blue';
@@ -188,7 +188,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
                             score[index_1][index_2] = level;
                             //赤と青の色の変化
                             if (count % 2 == 0) {
-                                self.style.color = 'red';
+                                self.style.color = 'orange';
                                 console.log("赤色に変わりました")
                             } else if(count % 2 == 1){
                                 self.style.color = 'blue';
@@ -232,6 +232,14 @@ window.addEventListener('DOMContentLoaded', ()=>{
                             sel_val.textContent = le_val;
                             ju = true;
                             score[index_1][index_2] = level;
+                            //赤と青の色の変化
+                            if (count % 2 == 0) {
+                                self.style.color = 'orange';
+                                console.log("赤色に変わりました")
+                            } else if(count % 2 == 1){
+                                self.style.color = 'blue';
+                                console.log("青色に変わりました")
+                            }
                             count++;
             //手持ちの駒を消す
                 //プレイヤー1（赤の持ち駒）
@@ -277,7 +285,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
                             score[index_1][index_2] = level;
                             //赤と青の色の変化
                             if (count % 2 == 0) {
-                                self.style.color = 'red';
+                                self.style.color = 'orange';
                                 console.log("赤色に変わりました")
                             } else if(count % 2 == 1){
                                 self.style.color = 'blue';
@@ -323,7 +331,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
                             score[index_1][index_2] = level;
                             //赤と青の色の変化
                             if (count % 2 == 0) {
-                                self.style.color = 'red';
+                                self.style.color = 'orange';
                                 console.log("赤色に変わりました")
                             } else if(count % 2 == 1){
                                 self.style.color = 'blue';
@@ -401,7 +409,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
                         
                     }
                     if(hoge[index__1][index__2] == "r"){
-                        self.style.color = "red";
+                        self.style.color = "orange";
                     }else if(hoge[index__1][index__2] == "b"){
                         self.style.color = "blue";
                     }
@@ -564,7 +572,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
                 let turn_text = document.querySelector("#turn");
                 if (count % 2 == 0) {
                     turn.textContent = "オレンジのターン";
-                    turn_text.style.color = "red";
+                    turn_text.style.color = "orange";
                 } else {
                     turn.textContent = "青のターン";
                     turn_text.style.color = "blue";
@@ -573,44 +581,75 @@ window.addEventListener('DOMContentLoaded', ()=>{
                 function jud(){
                     //勝ち負けの判定(オレンジ)
                     if(hoge[0][0] == "r" && hoge[0][1] == "r" && hoge[0][2] == "r"){
+                        board.style.backgroundColor=('orange')
+                        element();
                         alert("オレンジの勝ち")
                     }else if(hoge[1][0] == "r" && hoge[1][1] == "r" && hoge[1][2] == "r"){
+                        board.style.backgroundColor=('orange')
                         alert("オレンジの勝ち")
+                        element();
                     }else if(hoge[2][0] == "r" && hoge[2][1] == "r" && hoge[2][2] == "r"){
+                        board.style.backgroundColor=('orange')
                         alert("オレンジの勝ち")
+                        element();
                     }else if(hoge[0][0] == "r" && hoge[1][0] == "r" && hoge[2][0] == "r"){
+                        board.style.backgroundColor=('orange')
                         alert("オレンジの勝ち")
+                        element();
                     }else if(hoge[0][1] == "r" && hoge[1][1] == "r" && hoge[2][1] == "r"){
+                        board.style.backgroundColor=('orange')
                         alert("オレンジの勝ち")
+                        element();
                     }else if(hoge[0][2] == "r" && hoge[1][2] == "r" && hoge[2][2] == "r"){
+                        board.style.backgroundColor=('orange')
                         alert("オレンジの勝ち")
+                        element();
                     }else if(hoge[0][0] == "r" && hoge[1][1] == "r" && hoge[2][2] == "r"){
+                        board.style.backgroundColor=('orange')
                         alert("オレンジの勝ち")
+                        element();
+                    }else if(hoge[0][2] == "r" && hoge[1][1] == "r" && hoge[2][0] == "r"){
+                        board.style.backgroundColor=('orange')
+                        alert("オレンジの勝ち")
+                        element();
                     }
                     //勝ち負けの判定(青)
                     if(hoge[0][0] == "b" && hoge[0][1] == "b" && hoge[0][2] == "b"){
+                        board.style.backgroundColor=('blue')
                         alert("青の勝ち")
+                        element();
                     }else if(hoge[1][0] == "b" && hoge[1][1] == "b" && hoge[1][2] == "b"){
+                        board.style.backgroundColor=('blue')
                         alert("青の勝ち")
+                        element();
                     }else if(hoge[2][0] == "b" && hoge[2][1] == "b" && hoge[2][2] == "b"){
+                        board.style.backgroundColor=('blue')
                         alert("青の勝ち")
+                        element();
                     }else if(hoge[0][0] == "b" && hoge[1][0] == "b" && hoge[2][0] == "b"){
+                        board.style.backgroundColor=('blue')
                         alert("青の勝ち")
+                        element();
                     }else if(hoge[0][1] == "b" && hoge[1][1] == "b" && hoge[2][1] == "b"){
+                        board.style.backgroundColor=('blue')
                         alert("青の勝ち")
+                        element();
                     }else if(hoge[0][2] == "b" && hoge[1][2] == "b" && hoge[2][2] == "b"){
+                        board.style.backgroundColor=('blue')
                         alert("青の勝ち")
+                        element();
                     }else if(hoge[0][0] == "b" && hoge[1][1] == "b" && hoge[2][2] == "b"){
+                        board.style.backgroundColor=('blue')
                         alert("青の勝ち")
+                        element();
+                    }else if(hoge[0][2] == "b" && hoge[1][1] == "b" && hoge[2][0] == "b"){
+                        board.style.backgroundColor=('blue')
+                        alert("青の勝ち")
+                        element();
                     }
 
                 }
                 jud()
-                // console.log(hoge)
-
-                // alert(level)
-
-                // console.log(score)
             }
             , option);
 
@@ -716,3 +755,18 @@ window.addEventListener('DOMContentLoaded', ()=>{
     }, 10);
 }
 );
+
+function element(){
+//アンカータグを生成
+const element = document.createElement('a');
+//textの追加
+element.textContent = 'restart';
+//追加する親要素を取得する
+const parent = document.querySelector('#overlayDiv');
+//親要素の最後の子要素として追加する
+parent.appendChild(element);
+//クラスの設定
+element.classList.add('btn_19');
+element.href = 'index.html'
+}
+
