@@ -64,7 +64,7 @@
   }
 }
 .label {
-  font-size: 50px;
+  font-size: 48px;
   text-align: center;
   border-bottom: solid 1px black;
   text-shadow: 5px 3px 3px blue;
@@ -79,7 +79,7 @@
 
 #mg {
   position: relative;
-  left: 67%;
+  left: 68.7%;
 }
 
 #myText {
