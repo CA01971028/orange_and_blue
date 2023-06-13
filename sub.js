@@ -14,12 +14,10 @@ gb.src = "image/orange.png";
 // draw()
 
 //event処理（ルール）
-
-// ボタン要素を取得します
-var button = document.getElementById('myButton');
-
-// テキスト要素を取得します
-var text = document.getElementById('myText');
+  // ボタン要素を取得します
+  var button = document.getElementById('myButton');
+  // テキスト要素を取得します
+  var text = document.getElementById('myText');
 
 // ボタンがクリックされた時の処理を定義します
 button.addEventListener('click', function() {
@@ -31,6 +29,7 @@ button.addEventListener('click', function() {
   }
 });
 
+//画面が読み込まれたときの処理
 document.addEventListener("DOMContentLoaded", function() {
   // 1秒後にロード画面を非表示にする
   setTimeout(function() {

@@ -24,7 +24,6 @@
   -webkit-animation: loading-rotate 3s infinite linear;
           animation: loading-rotate 3s infinite linear;
 }
-
 @keyframes loading-rotate {
   0% {
     -webkit-transform: rotate(0deg);
@@ -47,16 +46,13 @@
   top:0;
   z-index:-1;
 }
-
 .bg2 {
   animation-direction:alternate-reverse;
   animation-duration:4s;
 }
-
 .bg3 {
   animation-duration:5s;
 }
-
 @keyframes slide {
   0% {
     transform:translateX(-25%);
@@ -65,13 +61,25 @@
     transform:translateX(25%);
   }
 }
-#st{
-    font-size:40px;
-    text-align: center;
-    margin-bottom: -1px;
-    margin-top: -24px;
-    vertical-align:-1000%;
+//タイトル
+.label{
+  font-size:50px;
+  text-align: center;
+  border-bottom: solid 1px black;
+  text-shadow: 5px 3px 3px blue;
+  color: orange;
 }
+//画像の背景・位置
+#img{
+  text-align: center;
+  background-color: #04BBD3;
+  border-bottom: solid 1px black;
+}
+#mg{
+    position: relative;
+    left: 67%;
+}
+//ルール説明のテキスト
 #myText {
   display:none;
   text-align: left;
@@ -80,9 +88,16 @@
   left: 1100px;
   font-size: 23px;
 }
-#mg_{
-  display: inline;
+//STARTボタン
+#st{
+    font-size:40px;
+    text-align: center;
+    margin-bottom: -1px;
+    margin-top: -24px;
+    vertical-align:-1000%;
 }
+
+//STARTボタンのアニメーション
 .answer .btn {
   position: relative;
   display: inline-block;
@@ -123,30 +138,6 @@
 }
 .answer .btn.cubic:hover .default {
   transform: rotateX(-90deg);
-}
-#la{
-    text-align: center;
-    border-bottom: solid 1px black;
-}
-#img{
-  text-align: center;
-  background-color: #04BBD3;
-  border-bottom: solid 1px black;
-}
-#mg{
-    position: relative;
-    left: 67%;
-}
-.label{
-    font-size: 50px;
-  //   margin-left:10px ;
-  //   display: inline-block;
-  // background: linear-gradient(180deg, #0072b4 0%, #7bc0be 72%, #afebea 100%);
-  // background: -webkit-linear-gradient(-45deg, #fed878 0%, #4a5ae7 100%);
-  // -webkit-background-clip: text;
-  // -webkit-text-fill-color: transparent;
-  text-shadow: 5px 3px 3px blue;
-  color: orange;
 }
 /*index.html*/
 #ma {
