@@ -693,7 +693,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
     }
     ;
 
-    presets.x = function(x, y, s, dx, dy, dr, r) {
+    presets.triangle = function(x, y, s, dx, dy, dr, r) {
         r = r || 0;
         return {
             x: x,
@@ -708,13 +708,14 @@ window.addEventListener('DOMContentLoaded', ()=>{
                 this.x += this.dx;
                 this.y += this.dy;
                 this.r += this.dr;
-
+    
                 var _this = this;
-                var line = function(x, y, tx, ty, c, o) {
-                    o = o || 0;
+                var triangle = function(x1, y1, x2, y2, x3, y3, c) {
                     ctx.beginPath();
-                    ctx.moveTo(-o + ((_this.s / 2) * x), o + ((_this.s / 2) * y));
-                    ctx.lineTo(-o + ((_this.s / 2) * tx), o + ((_this.s / 2) * ty));
+                    ctx.moveTo(x1, y1);
+                    ctx.lineTo(x2, y2);
+                    ctx.lineTo(x3, y3);
+                    ctx.closePath();
                     ctx.lineWidth = _this.w;
                     ctx.strokeStyle = c;
                     ctx.stroke();
@@ -725,8 +726,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
                 ctx.translate(this.x + Math.sin((x + (t / 10)) / 100) * 5, this.y + Math.sin((10 + x + (t / 10)) / 100) * 2);
                 ctx.rotate(this.r * Math.PI / 180);
 
-                line(-1, -1, 1, 1, '#fff');
-                line(1, -1, -1, 1, '#fff');
+                triangle(-5, -5, 0, 5, 5, -5, '#fff');
 
                 ctx.restore();
             }
@@ -741,7 +741,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
                 if (Math.round(Math.random()) == 1)
                     elements.push(presets.o(x, y, s, 0, 0));
                 else
-                    elements.push(presets.x(x, y, s, 0, 0, ((Math.random() * 3) - 1) / 10, (Math.random() * 360)));
+                    elements.push(presets.triangle(x, y, s, 0, 0, ((Math.random() * 3) - 1) / 10, (Math.random() * 360)));
             }
         }
     }
