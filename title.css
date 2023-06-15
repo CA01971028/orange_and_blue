@@ -181,6 +181,9 @@ body{
 .ten3.active{
   animation:move_cross3 0.5s forwards;
 }
+#sekkei{
+  margin-left:20px;
+}
 @keyframes move_bg {
   100%{
       margin-left:65%;
