@@ -88,3 +88,154 @@ body{
       color:rgb(255, 255, 255);
     }
   }
+  
+/*ハンバーガーメニュー＾－＾*/
+.ten1{
+  display:block;
+  width:50px;
+  height:4px;
+  margin-top:8px;
+  background-color: white;
+
+}
+.ten2{
+  display:block;
+  width:50px;
+  height:4px;
+  margin-top:8px;
+  background-color: white;
+
+}
+.ten3{
+  display:block;
+  width:50px;
+  height:4px;
+  margin-top:8px;
+  background-color: white;
+
+}
+
+#cl{
+  
+  width:50px;
+  margin-top:30px;
+  margin-right:20px;
+  float:right;
+
+}
+.bg{
+  width:400px;
+  height:500px;
+  margin-left:3000px;
+  background-color:rgb(128, 124, 124)
+}
+.bg.active {
+   animation:move_bg 1s forwards;
+   animation-direction: forwards;
+}
+.hanba{
+  font-size:30px;
+  margin-left:50px;
+  margin-top:20px;
+  left: 40px;
+}
+.dt{
+  display:block;
+  margin-left:50px;
+  margin-top:15px;
+}
+.a1{
+  display:block;
+  width:50px;
+  height:4px;
+  margin-top:1px;
+  background-color: white;
+  transform: rotate(-45deg);
+  /* margin-top:7.5px; */
+}
+.a2{
+  display:block;
+  width:50px;
+  height:4px;
+  margin-top:8px;
+  background-color: white;
+  margin-left:-50px;
+  margin-top:1px;
+}
+.a3{
+  display:block;
+  width:50px;
+  height:4px;
+  margin-top:8px;
+  background-color: white;
+  transform: rotate(45deg);
+  margin-top:-7px;
+
+}
+.ten1.active{
+  animation:move_cross1 0.5s forwards;
+}
+.ten2.active{
+  animation:move_cross2 0.5s forwards;
+}
+.ten3.active{
+  animation:move_cross3 0.5s forwards;
+}
+@keyframes move_bg {
+  100%{
+      margin-left:65%;
+  }
+}
+@keyframes move_cross1{
+  0%{
+  display:block;
+  width:50px;
+  height:4px;
+  margin-top:8px;
+  background-color: white;
+  }
+  100%{
+      display:block;
+  width:50px;
+  height:4px;
+  margin-top:1px;
+  background-color: white;
+  transform: rotate(-45deg);
+  }
+}
+@keyframes move_cross2{
+  0%{
+      display:block;
+  width:50px;
+  height:4px;
+  margin-top:8px;
+  background-color: white;
+  }
+  100%{
+      display:block;
+  width:50px;
+  height:4px;
+  margin-top:8px;
+  background-color: white;
+  margin-left:-50px;
+  margin-top:1px;
+  opacity:0;
+  }
+}
+@keyframes move_cross3{
+  0%{
+      display:block;
+  width:50px;
+  height:4px;
+  margin-top:8px;
+  background-color: white;
+  }100%{
+      display:block;
+  width:50px;
+  height:4px;
+  margin-top:8px;
+  background-color: white;
+  transform: rotate(45deg);
+  margin-top:-8px;
+  }
+}
