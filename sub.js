@@ -23,9 +23,9 @@ gb.src = "image/orange.png";
 button.addEventListener('click', function() {
   // テキストの表示状態を切り替えます
   if (text.style.display === 'block') {
-    text.style.display = 'none'; // テキストを表示します
+    text.style.display = 'none'; // テキストを非表示にします
   } else {
-    text.style.display = 'block'; // テキストを非表示にします
+    text.style.display = 'block'; // テキストを表示します
   }
 });
 
