@@ -16,19 +16,17 @@
   </head>
   <link rel="stylesheet" href="index2.css">
   <body onload="init()">
-    <h4 id="scrore">score:0</h4>
-    <table>
-      <tr>
-        <th><button id="start">スタート</button></th>
-        <th>キー操作一覧:   </th>
-        <th>A:左に移動</h6></th>
-        <th>D:右に移動</th>
-        <th>S:下に移動</th>
-        <th>L:ブロックの回転</th>
-      </tr>
-    </table>
-    
-    
+    <div id="key">
+      <span><button id="start">スタート</button></span>
+      <span id="scrore">score:0</span>
+      <span id="bg">
+      <span>キー操作一覧:   </span>
+      <span>A:左に移動</h6></th>
+      <span>D:右に移動</span>
+      <span>S:下に移動</span>
+      <span>L:ブロックの回転</span>
+    </span>
+    </div>
     <div id="container">
       <canvas id="cvs"></canvas>
     </div>

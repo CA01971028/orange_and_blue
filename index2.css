@@ -1,7 +1,7 @@
 button {
   width: 10em;
   height:4em;
-  margin:0px 100px 0px 500px
+  margin:0px 100px 0px 200px
 }
   h4 {
     margin: 20px 0;
@@ -16,6 +16,26 @@ h6,h5 {
   text-align:left;
   font-size:15px
 }
-table{
-  margin-top:-30px;
+
+#container{
+height:500px;
+margin-top:-10px;
 }
+#scrore{
+  margin-left:200px;
+	font-size: 3vw;
+	text-align:center;
+	font-weight:bold;
+	color: transparent;
+	background: repeating-linear-gradient( 90deg, #4169e1 0, #90CAF9 100% );
+	-webkit-background-clip: text;
+}
+/* #key{
+  display:inline-block;
+  margin-left:-400px;
+  margin-top:-10px;
+} */
+/* #bg{
+  display: inline-block;
+  margin-top:500px;
+} */
