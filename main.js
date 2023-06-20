@@ -574,7 +574,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
                     turn.textContent = "オレンジのターン";
                     turn_text.style.color = "orange";
                 } else {
-                    turn.textContent = "青のターン";
+                    turn.textContent = "ブルーのターン";
                     turn_text.style.color = "blue";
                 }
 
