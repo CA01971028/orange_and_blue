@@ -22,10 +22,10 @@ gb.src = "image/orange.png";
 // ボタンがクリックされた時の処理を定義します
 button.addEventListener('click', function() {
   // テキストの表示状態を切り替えます
-  if (text.style.display === 'none') {
-    text.style.display = 'block'; // テキストを表示します
+  if (text.style.display === 'block') {
+    text.style.display = 'none'; // テキストを表示します
   } else {
-    text.style.display = 'none'; // テキストを非表示にします
+    text.style.display = 'block'; // テキストを非表示にします
   }
 });
 
