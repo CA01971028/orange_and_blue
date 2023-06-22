@@ -1,42 +1,144 @@
 /*sub.html*/
-#st{
-    font-size:60px;
-    text-align: center;
-    margin-bottom: 5px;
-    margin-top: -20px;
+// ローディング画面
+#loading-container {
+  /* ローディング画面のコンテナのスタイルを指定する */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(231, 230, 230, 0.5); /* 半透明の背景色 */
+  z-index: 9999; /* 他の要素よりも手前に表示するためのz-index値 */
 }
-a.btn-border {
-  color: #000;
-  border: 3px solid #000;
-  border-radius: 0;
-  background: #fff;
-  font-size: 40px;
+.loading__icon {
+  position: absolute;
+  top: 35%;
+  left: 41.5%;
+  width: min(50vw, 250px);
+  height: min(50vw, 250px);
+  border-radius: 50%;
+  border: 5px solid;
+  border-color: orange #ffedcc #ffedcc;
 }
-a.btn-border:hover {
-  color: #fff;
-  background: #000;
+.loading__icon {
+  -webkit-animation: loading-rotate 3s infinite linear;
+          animation: loading-rotate 3s infinite linear;
 }
-#la{
-    text-align: center;;
+@keyframes loading-rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
-#img{
-    text-align:center;
-    background-color: rgb(115, 173, 243);
+// 背景のアニメーション
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #8A2BE2 50%, yellow 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
 }
-#mg{
-    margin-top:10px;
-    
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
 }
+.bg3 {
+  animation-duration:5s;
+}
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+//タイトル
 .label{
-    font-size: 50px;
-  //   margin-left:10px ;
-  //   display: inline-block;
-  // background: linear-gradient(180deg, #0072b4 0%, #7bc0be 72%, #afebea 100%);
-  // background: -webkit-linear-gradient(-45deg, #fed878 0%, #4a5ae7 100%);
-  // -webkit-background-clip: text;
-  // -webkit-text-fill-color: transparent;
+  font-size:46px;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: solid 3px black;
   text-shadow: 5px 3px 3px blue;
   color: orange;
+}
+//画像の背景・位置
+#img{
+  text-align: center;
+  background-color: #04BBD3;
+  border-bottom: solid 3px black;
+}
+#mg{
+    position: relative;
+    left: 68.7%;
+}
+//ルール説明のテキスト
+#myText {
+  display:none;
+  text-align: left;
+  position: absolute;
+  top: 50px;
+  left: 1090px;
+  font-size: 25px;
+}
+//STARTボタン
+#st{
+    font-size:40px;
+    text-align: center;
+    margin-bottom: -1px;
+    margin-top: -24px;
+    vertical-align:-1000%;
+}
+
+//STARTボタンのアニメーション
+.answer .btn {
+  position: relative;
+  display: inline-block;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  width: 650px;
+  height: 50px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: -15px;
+  cursor: pointer;
+}
+.answer .btn.cubic span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  box-sizing: border-box;
+  line-height: 48px;
+  text-align: center;
+  transition: all 0.3s;
+  transform-origin: center center -25px;
+}
+.answer .btn.cubic .hovering {
+  background-color: black;
+  color: white;
+  transform: rotateX(90deg);
+}
+.answer .btn.cubic .default {
+  background-color: white;
+  color: black;
+  transform: rotateX(0);
+}
+.answer .btn.cubic:hover .hovering {
+  transform: rotateX(0);
+}
+.answer .btn.cubic:hover .default {
+  transform: rotateX(-90deg);
 }
 /*index.html*/
 #ma {
@@ -48,7 +150,8 @@ a.btn-border:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    height: 43vh;
+    width:280px;
   }
   #container {
     padding: 10px;
@@ -91,7 +194,7 @@ a.btn-border:hover {
     position: relative;
     width: 80px;
     height: 80px;
-    background-color: darkgray;
+    background-color: whitesmoke;
   }
   #option{
     font-size:30px;
@@ -100,21 +203,23 @@ a.btn-border:hover {
     text-align: center;
   }
   #bg_1{
-    background-color: grey;
+    background-color: whitesmoke;
+    border: 1px solid #000000;
     width: 250px;
     font-size:40px;
     text-align: center;
     margin:auto;
   }
   #bg_2{
-    background-color: grey;
+    background-color: whitesmoke;
+    border: 1px solid #000000;
     width: 250px;
     font-size:40px;
     text-align: center;
     margin:auto;
   }
   #player_1{
-    color:red;
+    color:orange;
   }
   #player_2{
     color:blue;
@@ -122,8 +227,11 @@ a.btn-border:hover {
   #turn{
     display: inline-block;
     font-size:30px;
-    color: red;
-    margin-left:30% ;
+    color: orange;
+    margin-left:3% ;
+  }
+  .cell{
+    color:orange;
   }
   #canvasContainer {
     position: relative;
@@ -141,7 +249,6 @@ a.btn-border:hover {
   #overlayDiv {
     position: absolute;
     top: -7px;
-    left: 50px;
     z-index: 2;
     padding: 10px;
     width: 80%;
@@ -154,7 +261,6 @@ a.btn-border:hover {
     width: 100%;
     height: 100%;
   }
-  
   #canvas {
     width: 100%;
     height: 100%;
@@ -162,7 +268,64 @@ a.btn-border:hover {
     opacity:50%
   }
   #con-tex{
-    display: inline;
+    display: flex;
+    margin-top: 42px;
   }
+#no{
+  margin-left: 24%;
+}
+#sp{
+  margin-left:60px;
+}
+.flex {
+  display: flex; /*横並び*/
+}
+.flex .image {
+  width: 640px; /*画像サイズ指定*/
+  margin: 0;
+  padding: 0;
+}
+.flex .image img {
+  width: 100%;
+  height: auto;
+}
+.flex .text {
+  margin: 0 0 0 20px;
+  padding: 0;
+}
+#text-detail{
+  font-size:20px;
+  margin-top:40px;
+  margin-left:100px;
 
-  
+}
+a.btn_19 {
+	display: block;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	width: 120px;
+	margin: auto;
+	padding: 1rem 4rem;
+	font-weight: bold;
+	border: 2px solid #27acd9;
+	background: #27acd9;
+	color: #fff;
+	border-radius: 5px;
+	transition: 0.5s;
+	animation: move_a 2s infinite;
+}
+@keyframes move_a {
+    0% {transform: translate(0px, 4px);}
+    5% {transform: translate(0px, -4px);}
+    10% {transform: translate(0px, 4px);}
+    15% {transform: translate(0px, -4px);}
+    20% {transform: translate(0px, 4px);}
+    25% {transform: translate(0px, -4px);}
+    30% {transform: translate(0px, 0px);}
+}
+a.btn_19:hover {
+	color: #27acd9;
+	background: #fff;
+}
+

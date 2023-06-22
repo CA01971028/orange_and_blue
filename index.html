@@ -12,22 +12,41 @@
         <canvas id="canvas" width="100%" height="100%"></canvas>
         <div id="overlayDiv">
             <div id="con-tex">
-                <div id="se"><div id="select">未定</div></div>
-                <div>キー設定</div>
-                <span id="option">S:△<br>
-                    M:〇<br>
-                    L:◎
+                <span id="sp">
+                    <div id="se"><div id="select">未定</div></div>
+                    <div>キー設定</div>
+                    <span id="option">S:△<br>
+                        M:〇<br>
+                        L:◎
+                    </span>
                 </span>
-                <span id="turn">オレンジのターン</span>
-                <p id="bg_1"><span id="player_1" >△△〇〇◎◎</span></p>
-                <div id="center">
-                <div id="container">
-                <table id="board"></table>
-                </div>
-                </div>
-                <div id="bg_2"><div id="player_2">△△〇〇◎◎</div></div>
-                <div id="back"><a href="sub.html">メニューに戻る</a></div>
+                <span id="no">
+                    <span id="turn">オレンジのターン</span>
+                    <p id="bg_1"><span id="player_1" >△△〇〇◎◎</span></p>
+                    <div id="center">
+                    <div id="container">
+                    <table id="board"></table>
+                    </div>
+                    </div>
+                    <div id="bg_2"><div id="player_2">△△〇〇◎◎</div></div>
+                    <div id="back"><a href="sub.html">メニューに戻る</a></div>
+                </span>
+                <span id="text-detail">
+                    ・自分のコマを盤面の空いている場所に置くことができる。<br>
+                    ・自分のコマより小さいコマに被せて隠すことができる。<br>
+                    ・自分のコマに、さらに自分のコマを被せることもできる。<br>
+                    ・持ち駒のほか、既に盤面に置いた「見えている自分のコマ」を動かすこともできる。(自分以外の駒を取ったり動かしたりすることはできない)<br>
+                    ・縦、横、斜めのいずれかに同じ色が３つ並び次第ゲームの勝敗が決する。<br>
+                    ※いかなることがあろうと、故意的不正がある場合は無効試合となる。※
+                </span>
+                
         </div>
+        <audio src="../bgm/bgm.mp3" autoplay loop>
+            あなたのブラウザーは <code>audio</code>要素をサポートしていません。
+        </audio>
+        <!-- <a href="index.html" class="btn_19">restart</a> -->
+
+        <!-- <input type="button" value="ページの再読込" onclick="window.location.reload();" /> -->
     </div>
     <script src="main.js"></script>
     <body  onContextmenu="return false;">
