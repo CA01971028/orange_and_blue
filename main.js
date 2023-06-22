@@ -769,27 +769,3 @@ parent.appendChild(element);
 element.classList.add('btn_19');
 element.href = 'index.html'
 }
-
-setInterval(function() {
-    ctx.clearRect(0, 0, Canvas.width, Canvas.height);
-
-    var time = new Date().getTime();
-    for (var e in elements)
-    elements[e].draw(ctx, time);
-}, 10);
-});
-
-let audio = null;
-
-function handleClick() {
-  audio = new Audio('maou_bgm_cyber44.mp3');
-  document.body.removeEventListener('click', handleClick);
-}
-
-document.body.addEventListener('click', handleClick);
-
-setInterval(() => {
-  if (audio) {
-    audio.play();
-  }
-}, 0);

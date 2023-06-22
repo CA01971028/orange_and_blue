@@ -40,7 +40,67 @@
                     ※いかなることがあろうと、故意的不正がある場合は無効試合となる。※
                 </span>
                 
+                
         </div>
+        <!DOCTYPE html>
+<html>
+  <head>
+    <title>BGMを再生する</title>
+    <style>
+      #playButton {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      #playButton.playing {
+        background-color: #e74c3c;
+      }
+
+      #playButton::before {
+        content: "▶";
+        margin-right: 5px;
+      }
+
+      #playButton.playing::before {
+        content: "⏸";
+      }
+    </style>
+  </head>
+  <body>
+    <button id="playButton">再生</button>
+
+    <script>
+      // ボタン要素を取得
+      var playButton = document.getElementById("playButton");
+
+      // オーディオ要素を作成
+      var audioPlayer = new Audio();
+
+      // BGMファイルのURLを設定
+      audioPlayer.src = "YOASOBI _ Idol (「アイドル」English Ver-[onlinevideoconverter.com].mp3";
+      audioPlayer.loop = true; // ループ再生を有効にする
+
+      // ボタンがクリックされた時の処理
+      playButton.addEventListener("click", function() {
+        // 再生中でない場合は再生、再生中の場合は一時停止
+        if (audioPlayer.paused) {
+          audioPlayer.play();
+          playButton.classList.add("playing");
+          playButton.textContent = "一時停止";
+        } else {
+          audioPlayer.pause();
+          playButton.classList.remove("playing");
+          playButton.textContent = "再生";
+        }
+      });
+    </script>
+  </body>
+</html>
         <audio src="../bgm/bgm.mp3" autoplay loop>
             あなたのブラウザーは <code>audio</code>要素をサポートしていません。
         </audio>
@@ -51,4 +111,5 @@
     <script src="main.js"></script>
     <body  onContextmenu="return false;">
 </html>
+
 

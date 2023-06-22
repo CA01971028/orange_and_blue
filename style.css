@@ -1,23 +1,58 @@
 @charset "UTF-8";
 /*sub.html*/
-#st {
-  font-size: 60px;
-  text-align: center;
-  margin-bottom: 5px;
-  margin-top: -20px;
+#loading-container {
+  /* ローディング画面のコンテナのスタイルを指定する */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(231, 230, 230, 0.5); /* 半透明の背景色 */
+  z-index: 9999; /* 他の要素よりも手前に表示するためのz-index値 */
 }
 
-a.btn-border {
-  color: #000;
-  border: 3px solid #000;
-  border-radius: 0;
-  background: #fff;
-  font-size: 40px;
+.loading__icon {
+  position: absolute;
+  top: 35%;
+  left: 41.5%;
+  width: min(50vw, 250px);
+  height: min(50vw, 250px);
+  border-radius: 50%;
+  border: 5px solid;
+  border-color: orange #ffedcc #ffedcc;
 }
 
-a.btn-border:hover {
-  color: #fff;
-  background: #000;
+.loading__icon {
+  animation: loading-rotate 3s infinite linear;
+}
+
+@keyframes loading-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.bg {
+  animation: slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #8A2BE2 50%, yellow 50%);
+  bottom: 0;
+  left: -50%;
+  opacity: 0.5;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1;
+}
+
+.bg2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 4s;
+}
+
+.bg3 {
+  animation-duration: 5s;
 }
 
 @keyframes slide {
@@ -32,11 +67,15 @@ a.btn-border:hover {
   font-size: 46px;
   font-weight: bold;
   text-align: center;
+  border-bottom: solid 3px black;
+  text-shadow: 5px 3px 3px blue;
+  color: orange;
 }
 
 #img {
   text-align: center;
-  background-color: rgb(115, 173, 243);
+  background-color: #04BBD3;
+  border-bottom: solid 3px black;
 }
 
 #mg {
@@ -205,8 +244,12 @@ td {
 #turn {
   display: inline-block;
   font-size: 30px;
-  color: red;
-  margin-left: 30%;
+  color: orange;
+  margin-left: 3%;
+}
+
+.cell {
+  color: orange;
 }
 
 #canvasContainer {
@@ -247,97 +290,85 @@ html, body {
 }
 
 #con-tex {
-  display: inline;
+  display: flex;
+  margin-top: 42px;
+}
+
+#no {
+  margin-left: 24%;
+}
+
+#sp {
+  margin-left: 60px;
+}
+
+.flex {
+  display: flex; /*横並び*/
+}
+
+.flex .image {
+  width: 640px; /*画像サイズ指定*/
+  margin: 0;
+  padding: 0;
+}
+
+.flex .image img {
+  width: 100%;
+  height: auto;
+}
+
+.flex .text {
+  margin: 0 0 0 20px;
+  padding: 0;
+}
+
+#text-detail {
+  font-size: 20px;
+  margin-top: 40px;
+  margin-left: 100px;
+}
+
+a.btn_19 {
+  display: block;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  width: 120px;
+  margin: auto;
+  padding: 1rem 4rem;
+  font-weight: bold;
+  border: 2px solid #27acd9;
+  background: #27acd9;
+  color: #fff;
+  border-radius: 5px;
+  transition: 0.5s;
+  animation: move_a 2s infinite;
+}
+
+@keyframes move_a {
+  0% {
+    transform: translate(0px, 4px);
+  }
+  5% {
+    transform: translate(0px, -4px);
+  }
+  10% {
+    transform: translate(0px, 4px);
+  }
+  15% {
+    transform: translate(0px, -4px);
+  }
+  20% {
+    transform: translate(0px, 4px);
+  }
+  25% {
+    transform: translate(0px, -4px);
+  }
+  30% {
+    transform: translate(0px, 0px);
+  }
+}
+a.btn_19:hover {
+  color: #27acd9;
+  background: #fff;
 }/*# sourceMappingURL=style.css.map */
-
-body::before, 
-body::after {
-content: "";
-width: 70vmax;
-height: 70vmax;
-position: absolute;
-background: rgba(255, 255, 255, 0.07);
-left: -20vmin;
-top: -20vmin;
-animation: morph 15s linear infinite alternate, spin 20s linear infinite;
-z-index: 1;
-will-change: border-radius, transform;
-transform-origin: 55% 55%;
-pointer-events: none; 
-}
-
-body::after {
-  width: 70vmin;
-  height: 70vmin;
-  left: auto;
-  right: -10vmin;
-  top: auto;
-  bottom: 0;
-  animation: morph 10s linear infinite alternate, spin 26s linear infinite reverse;
-  transform-origin: 20% 20%; 
-}
-
-@-webkit-keyframes Gradient {
-0% {
-  background-position: 0 50%
-}
-50% {
-  background-position: 100% 50%
-}
-100% {
-  background-position: 0 50%
-}
-}
-
-@-moz-keyframes Gradient {
-0% {
-  background-position: 0 50%
-}
-50% {
-  background-position: 100% 50%
-}
-100% {
-  background-position: 0 50%
-}
-}
-
-@keyframes Gradient {
-0% {
-  background-position: 0 50%
-}
-50% {
-  background-position: 100% 50%
-}
-100% {
-  background-position: 0 50%
-}
-}
-
-@keyframes morph {
-0% {
-  border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%; }
-100% {
-  border-radius: 40% 60%; } 
-}
-
-@keyframes spin {
-to {
-  transform: rotate(1turn); 
-} 
-}
-.st0{display:none;}
-.st1{display:inline;}
-.st2{opacity:0.29;}
-.st3{fill:#FFFFFF;}
-.st4{clip-path:url(#SVGID_2_);fill:#FFFFFF;}
-.st5{clip-path:url(#SVGID_4_);}
-.st6{clip-path:url(#SVGID_6_);}
-.st7{clip-path:url(#SVGID_8_);}
-.st8{clip-path:url(#SVGID_10_);}
-.st9{fill:none;}
-.st10{clip-path:url(#SVGID_12_);}
-.st11{opacity:0.7;}
-.st12{clip-path:url(#SVGID_14_);}
-.st13{opacity:0.2;}
-.st14{clip-path:url(#SVGID_16_);}
-.st15{opacity:0.3;fill:#FFFFFF;enable-background:new    ;}

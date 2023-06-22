@@ -14,19 +14,26 @@ gb.src = "image/orange.png";
 // draw()
 
 //event処理（ルール）
-var btn = document.querySelector('#button');
-btn.addEventListener('click',function(){
-    alert("・自分のコマを盤面の空いている場所に置くことができる。\n・自分のコマより小さいコマに被せて隠すことができる。\n・自分のコマに、さらに自分のコマを被せることもできる。\n・持ち駒のほか、既に盤面に置いた「見えている自分のコマ」を動かすこともできる。")
-})
+  // ボタン要素を取得します
+  var button = document.getElementById('myButton');
+  // テキスト要素を取得します
+  var text = document.getElementById('myText');
 
-function changeBackgroundColor() {
-    var colors = ["#FF5733", "#C70039", "#900C3F", "#581845"];
-    var currentColor = 0;
-    setInterval(function() {
-      currentColor = (currentColor + 1) % colors.length;
-      document.body.style.backgroundColor = colors[currentColor];
-    }, 1000);
+// ボタンがクリックされた時の処理を定義します
+button.addEventListener('click', function() {
+  // テキストの表示状態を切り替えます
+  if (text.style.display === 'block') {
+    text.style.display = 'none'; // テキストを非表示にします
+  } else {
+    text.style.display = 'block'; // テキストを表示します
   }
+});
 
-  
-  
+//画面が読み込まれたときの処理
+document.addEventListener("DOMContentLoaded", function() {
+  // 1秒後にロード画面を非表示にする
+  setTimeout(function() {
+    var loadingScreen = document.getElementById("loading-container");
+    loadingScreen.style.display = "none";
+  }, 1000);
+});
