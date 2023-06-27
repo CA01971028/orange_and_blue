@@ -372,4 +372,9 @@ a.btn_19 {
 a.btn_19:hover {
   color: #27acd9;
   background: #fff;
+}
+
+.button {
+  cursor: pointer;
+  margin-top: 250px;
 }/*# sourceMappingURL=style.css.map */
