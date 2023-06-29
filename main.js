@@ -770,3 +770,21 @@ element.classList.add('btn_19');
 element.href = 'index.html'
 }
 
+
+var sbutton = document.getElementById("sbutton");
+sbutton.addEventListener("click", function () {
+        select.textContent = "△";
+        level = "△"
+    });
+
+var mbutton = document.getElementById("mbutton");
+mbutton.addEventListener("click", function () {
+        select.textContent = "〇";
+        level = "〇"
+    });
+
+var lbutton = document.getElementById("lbutton");
+lbutton.addEventListener("click", function () {
+        select.textContent = "◎";
+        level = "◎"
+    });

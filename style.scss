@@ -71,6 +71,7 @@
   color: orange;
 }
 //画像の背景・位置
+.image img { width: 100%; }
 #img{
   text-align: center;
   background-color: #04BBD3;
@@ -330,5 +331,16 @@ a.btn_19:hover {
 }
 .button {
   cursor: pointer;
-  margin-top: 200px;
+  margin-top: 40px;
+}
+#button_3 {
+  display: flex;
+  flex-direction: row;
+}
+#sbutton, #mbutton, #lbutton {
+  width: 40px;
+  height: 40px;
+}
+.xbutton {
+  white-space: nowrap;
 }
