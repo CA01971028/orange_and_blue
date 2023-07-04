@@ -44,6 +44,16 @@ window.addEventListener('DOMContentLoaded', ()=>{
 
     //判定
     let ju = false;
+    
+    //△〇◎のボタンの取得
+    let midle = document.querySelector('#midle');
+    let lerge = document.querySelector('#lerge');
+    let extra = document.querySelector('#extra');
+    let back = document.querySelector('#back');
+ 
+    //駒を置くか置かないかの判定
+    let definition = "put";
+  
 
     //メインプログラム
     for (let i = 0; i < xy; i++) {
@@ -53,6 +63,33 @@ window.addEventListener('DOMContentLoaded', ()=>{
             // const option = { once: true }; 
             td.className = `cell ${j}-${i}`;
             tr.appendChild(td);
+
+              //ボタンのイベントの付加
+                midle.addEventListener('click', mid);
+                lerge.addEventListener('click', ler);
+                extra.addEventListener('click', ext);
+
+                //ボタンの機能
+                function mid(){
+                    level = "△";
+                    select.textContent = '△'
+                    definition = "put";
+                    console.log('駒を置く機能に変更しました');
+                }
+
+                function ler(){
+                    select.textContent = '〇';
+                    level = "〇";
+                    definition = "put";
+                    console.log('駒を置く機能に変更しました');
+                }
+
+                function ext(){
+                    select.textContent = '◎';
+                    level = "◎";
+                    definition = "put";
+                    console.log('駒を置く機能に変更しました');
+                }
 
             //keyの取得
             document.addEventListener('keydown', e=>{
@@ -96,7 +133,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
                                 console.log("青色に変わりました")
                             }
                             count++;
-            //手持ちの駒を消す
+             //手持ちの駒を消す
                 //プレイヤー1（赤の持ち駒）
                 if (count % 2 == 1) {
                     var index = pl_1.indexOf(level);
@@ -143,7 +180,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
                                 console.log("青色に変わりました")
                             }
                             count++;
-            //手持ちの駒を消す
+             //手持ちの駒を消す
                 //プレイヤー1（赤の持ち駒）
                 if (count % 2 == 1) {
                     var index = pl_1.indexOf(level);
@@ -195,7 +232,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
                                 console.log("青色に変わりました")
                             }
                             count++;
-            //手持ちの駒を消す
+             //手持ちの駒を消す
                 //プレイヤー1（赤の持ち駒）
                 if (count % 2 == 1) {
                     var index = pl_1.indexOf(level);
@@ -241,7 +278,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
                                 console.log("青色に変わりました")
                             }
                             count++;
-            //手持ちの駒を消す
+             //手持ちの駒を消す
                 //プレイヤー1（赤の持ち駒）
                 if (count % 2 == 1) {
                     var index = pl_1.indexOf(level);
@@ -292,7 +329,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
                                 console.log("青色に変わりました")
                             }
                             count++;
-            //手持ちの駒を消す
+             //手持ちの駒を消す
                 //プレイヤー1（赤の持ち駒）
                 if (count % 2 == 1) {
                     var index = pl_1.indexOf(level);
@@ -375,7 +412,184 @@ window.addEventListener('DOMContentLoaded', ()=>{
                     console.log(hoge);
 
                 }
-                const right_click = (index__1,index__2,af,af_co,)=>{
+                switch (self.className) {
+                    case "cell 0-0":
+                        //持ち駒が置けるか置けないか
+                        var index1 = 0;
+                        var index2 = 0;
+                        judge(level, score, self, index1, index2)
+                        if (ju) {
+                            af_00 = origin_val;
+                            af_co00 = origin_col;
+                        }
+                        ju = false;
+                        break;
+                    case "cell 0-1":
+                        var index1 = 1;
+                        var index2 = 0;
+                        judge(level, score, self, index1, index2)
+                        if (ju) {
+                            af_10 = origin_val;
+                            af_co10 = origin_col;
+                        }
+                        ju = false;
+                        break;
+                    case "cell 0-2":
+                        var index1 = 2;
+                        var index2 = 0;
+                        judge(level, score, self, index1, index2)
+                        if (ju) {
+                            af_20 = origin_val;
+                            af_co20 = origin_col;
+                        }
+                        ju = false;
+                        break;
+                    case "cell 1-0":
+                        var index1 = 0;
+                        var index2 = 1;
+                        judge(level, score, self, index1, index2)
+                        if (ju) {
+                            af_01 = origin_val;
+                            af_co01 = origin_col;
+                        }
+                        ju = false;
+                        break;
+                    case "cell 1-1":
+                        var index1 = 1;
+                        var index2 = 1;
+                        judge(level, score, self, index1, index2)
+                        if (ju) {
+                            af_11 = origin_val;
+                            af_co11 = origin_col;
+                        }
+                        ju = false;
+                        break;
+                    case "cell 1-2":
+                        var index1 = 2;
+                        var index2 = 1;
+                        judge(level, score, self, index1, index2)
+                        if (ju) {
+                            af_21 = origin_val;
+                            af_co21 = origin_col;
+                        }
+                        ju = false;
+                        break;
+                    case "cell 2-0":
+                        var index1 = 0;
+                        var index2 = 2;
+                        judge(level, score, self, index1, index2)
+                        if (ju) {
+                            af_02 = origin_val;
+                            af_co02 = origin_col;
+                        }
+                        ju = false;
+                        break;
+                    case "cell 2-1":
+                        var index1 = 1;
+                        var index2 = 2;
+                        judge(level, score, self, index1, index2)
+                        if (ju) {
+                            af_12 = origin_val;
+                            af_co12 = origin_col;
+                        }
+                        ju = false;
+                        break;
+                    case "cell 2-2":
+                        var index1 = 2;
+                        var index2 = 2;
+                        judge(level, score, self, index1, index2)
+                        if (ju) {
+                            af_22 = origin_val;
+                            af_co22 = origin_col;
+                        }
+                        ju = false;
+                        break;
+                    }
+    
+                    //オレンジか青かのターン
+                    let turn_text = document.querySelector("#turn");
+                    if (count % 2 == 0) {
+                        turn.textContent = "オレンジのターン";
+                        turn_text.style.color = "orange";
+                    } else {
+                        turn.textContent = "ブルーのターン";
+                        turn_text.style.color = "blue";
+                    }
+    
+                    function jud(){
+                        //勝ち負けの判定(オレンジ)
+                        if(hoge[0][0] == "r" && hoge[0][1] == "r" && hoge[0][2] == "r"){
+                            board.style.backgroundColor=('orange')
+                            element();
+                            alert("オレンジの勝ち")
+                        }else if(hoge[1][0] == "r" && hoge[1][1] == "r" && hoge[1][2] == "r"){
+                            board.style.backgroundColor=('orange')
+                            alert("オレンジの勝ち")
+                            element();
+                        }else if(hoge[2][0] == "r" && hoge[2][1] == "r" && hoge[2][2] == "r"){
+                            board.style.backgroundColor=('orange')
+                            alert("オレンジの勝ち")
+                            element();
+                        }else if(hoge[0][0] == "r" && hoge[1][0] == "r" && hoge[2][0] == "r"){
+                            board.style.backgroundColor=('orange')
+                            alert("オレンジの勝ち")
+                            element();
+                        }else if(hoge[0][1] == "r" && hoge[1][1] == "r" && hoge[2][1] == "r"){
+                            board.style.backgroundColor=('orange')
+                            alert("オレンジの勝ち")
+                            element();
+                        }else if(hoge[0][2] == "r" && hoge[1][2] == "r" && hoge[2][2] == "r"){
+                            board.style.backgroundColor=('orange')
+                            alert("オレンジの勝ち")
+                            element();
+                        }else if(hoge[0][0] == "r" && hoge[1][1] == "r" && hoge[2][2] == "r"){
+                            board.style.backgroundColor=('orange')
+                            alert("オレンジの勝ち")
+                            element();
+                        }else if(hoge[0][2] == "r" && hoge[1][1] == "r" && hoge[2][0] == "r"){
+                            board.style.backgroundColor=('orange')
+                            alert("オレンジの勝ち")
+                            element();
+                        }
+                        //勝ち負けの判定(青)
+                        if(hoge[0][0] == "b" && hoge[0][1] == "b" && hoge[0][2] == "b"){
+                            board.style.backgroundColor=('blue')
+                            alert("青の勝ち")
+                            element();
+                        }else if(hoge[1][0] == "b" && hoge[1][1] == "b" && hoge[1][2] == "b"){
+                            board.style.backgroundColor=('blue')
+                            alert("青の勝ち")
+                            element();
+                        }else if(hoge[2][0] == "b" && hoge[2][1] == "b" && hoge[2][2] == "b"){
+                            board.style.backgroundColor=('blue')
+                            alert("青の勝ち")
+                            element();
+                        }else if(hoge[0][0] == "b" && hoge[1][0] == "b" && hoge[2][0] == "b"){
+                            board.style.backgroundColor=('blue')
+                            alert("青の勝ち")
+                            element();
+                        }else if(hoge[0][1] == "b" && hoge[1][1] == "b" && hoge[2][1] == "b"){
+                            board.style.backgroundColor=('blue')
+                            alert("青の勝ち")
+                            element();
+                        }else if(hoge[0][2] == "b" && hoge[1][2] == "b" && hoge[2][2] == "b"){
+                            board.style.backgroundColor=('blue')
+                            alert("青の勝ち")
+                            element();
+                        }else if(hoge[0][0] == "b" && hoge[1][1] == "b" && hoge[2][2] == "b"){
+                            board.style.backgroundColor=('blue')
+                            alert("青の勝ち")
+                            element();
+                        }else if(hoge[0][2] == "b" && hoge[1][1] == "b" && hoge[2][0] == "b"){
+                            board.style.backgroundColor=('blue')
+                            alert("青の勝ち")
+                            element();
+                        }
+    
+                    }
+                    jud()
+                
+                function right_click(index__1,index__2,af,af_co,){
                     if (count % 2 == 0) {
                         if(hoge[index__1][index__2] == "r"){
                             var va1 = score[index__1][index__2];
@@ -416,240 +630,71 @@ window.addEventListener('DOMContentLoaded', ()=>{
                     //勝ち負けの判定
                     jud();
                 }
+                back.addEventListener('click',function(){
+                    definition = "pull";
+                    console.log('駒を取る機能に変更されました')
+                    console.log(definition);
+                });
+                if(definition == 'pull'){
+                        switch (self.className) {
+                        case "cell 0-0":
+                            var index__1 = 0;
+                            var index__2 = 0;
+                            right_click(index__1, index__2, af_00, af_co00,)
+                            console.log(hoge)
+                            console.log(score)
+                            break;
+                        case "cell 0-1":
+                            var index__1 = 1;
+                            var index__2 = 0;
+                            right_click(index__1, index__2, af_10, af_co10);
+                            break;
+                        case "cell 0-2":
+                            var index__1 = 2;
+                            var index__2 = 0;
+                            right_click(index__1, index__2, af_20, af_co20);
+                            break;
+                        case "cell 1-0":
+                            var index__1 = 0;
+                            var index__2 = 1;
+                            right_click(index__1, index__2, af_01, af_co01);
+                            break;
+                        case "cell 1-1":
+                            var index__1 = 1;
+                            var index__2 = 1;
+                            right_click(index__1, index__2, af_11, af_co11);
+                            break;
+                        case "cell 1-2":
+                            var index__1 = 2;
+                            var index__2 = 1;
+                            right_click(index__1, index__2, af_21, af_co21);
+                            break;
+                        case "cell 2-0":
+                            var index__1 = 0;
+                            var index__2 = 2;
+                            right_click(index__1, index__2, af_02, af_co02);
+                            break;
+                        case "cell 2-1":
+                            var index__1 = 1;
+                            var index__2 = 2;
+                            right_click(index__1, index__2, af_12, af_co12);
+                            break;
+                        case "cell 2-2":
+                            var index__1 = 2;
+                            var index__2 = 2;
+                            right_click(index__1, index__2, af_22, af_co22);
+                            break;
+                        }
+                        // for(let i = 0;i < 3;i++){
+                        //     for(let f = 0;f < 3;f++){
+                        //         self.textContent = score[i][f]
+                        //     }
+                        // }
+                }
                 //右クリックの動作の導入
-                td.addEventListener('contextmenu', function() {
-                    switch (self.className) {
-                    case "cell 0-0":
-                        var index__1 = 0;
-                        var index__2 = 0;
-                        right_click(index__1, index__2, af_00, af_co00,)
-                        console.log(hoge)
-                        console.log(score)
-                        break;
-                    case "cell 0-1":
-                        var index__1 = 1;
-                        var index__2 = 0;
-                        right_click(index__1, index__2, af_10, af_co10);
-                        break;
-                    case "cell 0-2":
-                        var index__1 = 2;
-                        var index__2 = 0;
-                        right_click(index__1, index__2, af_20, af_co20);
-                        break;
-                    case "cell 1-0":
-                        var index__1 = 0;
-                        var index__2 = 1;
-                        right_click(index__1, index__2, af_01, af_co01);
-                        break;
-                    case "cell 1-1":
-                        var index__1 = 1;
-                        var index__2 = 1;
-                        right_click(index__1, index__2, af_11, af_co11);
-                        break;
-                    case "cell 1-2":
-                        var index__1 = 2;
-                        var index__2 = 1;
-                        right_click(index__1, index__2, af_21, af_co21);
-                        break;
-                    case "cell 2-0":
-                        var index__1 = 0;
-                        var index__2 = 2;
-                        right_click(index__1, index__2, af_02, af_co02);
-                        break;
-                    case "cell 2-1":
-                        var index__1 = 1;
-                        var index__2 = 2;
-                        right_click(index__1, index__2, af_12, af_co12);
-                        break;
-                    case "cell 2-2":
-                        var index__1 = 2;
-                        var index__2 = 2;
-                        right_click(index__1, index__2, af_22, af_co22);
-                        break;
-                    }
-                    // for(let i = 0;i < 3;i++){
-                    //     for(let f = 0;f < 3;f++){
-                    //         self.textContent = score[i][f]
-                    //     }
-                    // }
-                })
+               
 
-                switch (self.className) {
-                case "cell 0-0":
-                    //持ち駒が置けるか置けないか
-                    var index1 = 0;
-                    var index2 = 0;
-                    judge(level, score, self, index1, index2)
-                    if (ju) {
-                        af_00 = origin_val;
-                        af_co00 = origin_col;
-                    }
-                    ju = false;
-                    break;
-                case "cell 0-1":
-                    var index1 = 1;
-                    var index2 = 0;
-                    judge(level, score, self, index1, index2)
-                    if (ju) {
-                        af_10 = origin_val;
-                        af_co10 = origin_col;
-                    }
-                    ju = false;
-                    break;
-                case "cell 0-2":
-                    var index1 = 2;
-                    var index2 = 0;
-                    judge(level, score, self, index1, index2)
-                    if (ju) {
-                        af_20 = origin_val;
-                        af_co20 = origin_col;
-                    }
-                    ju = false;
-                    break;
-                case "cell 1-0":
-                    var index1 = 0;
-                    var index2 = 1;
-                    judge(level, score, self, index1, index2)
-                    if (ju) {
-                        af_01 = origin_val;
-                        af_co01 = origin_col;
-                    }
-                    ju = false;
-                    break;
-                case "cell 1-1":
-                    var index1 = 1;
-                    var index2 = 1;
-                    judge(level, score, self, index1, index2)
-                    if (ju) {
-                        af_11 = origin_val;
-                        af_co11 = origin_col;
-                    }
-                    ju = false;
-                    break;
-                case "cell 1-2":
-                    var index1 = 2;
-                    var index2 = 1;
-                    judge(level, score, self, index1, index2)
-                    if (ju) {
-                        af_21 = origin_val;
-                        af_co21 = origin_col;
-                    }
-                    ju = false;
-                    break;
-                case "cell 2-0":
-                    var index1 = 0;
-                    var index2 = 2;
-                    judge(level, score, self, index1, index2)
-                    if (ju) {
-                        af_02 = origin_val;
-                        af_co02 = origin_col;
-                    }
-                    ju = false;
-                    break;
-                case "cell 2-1":
-                    var index1 = 1;
-                    var index2 = 2;
-                    judge(level, score, self, index1, index2)
-                    if (ju) {
-                        af_12 = origin_val;
-                        af_co12 = origin_col;
-                    }
-                    ju = false;
-                    break;
-                case "cell 2-2":
-                    var index1 = 2;
-                    var index2 = 2;
-                    judge(level, score, self, index1, index2)
-                    if (ju) {
-                        af_22 = origin_val;
-                        af_co22 = origin_col;
-                    }
-                    ju = false;
-                    break;
-                }
-
-                //オレンジか青かのターン
-                let turn_text = document.querySelector("#turn");
-                if (count % 2 == 0) {
-                    turn.textContent = "オレンジのターン";
-                    turn_text.style.color = "orange";
-                } else {
-                    turn.textContent = "ブルーのターン";
-                    turn_text.style.color = "blue";
-                }
-
-                function jud(){
-                    //勝ち負けの判定(オレンジ)
-                    if(hoge[0][0] == "r" && hoge[0][1] == "r" && hoge[0][2] == "r"){
-                        board.style.backgroundColor=('orange')
-                        element();
-                        alert("オレンジの勝ち")
-                    }else if(hoge[1][0] == "r" && hoge[1][1] == "r" && hoge[1][2] == "r"){
-                        board.style.backgroundColor=('orange')
-                        alert("オレンジの勝ち")
-                        element();
-                    }else if(hoge[2][0] == "r" && hoge[2][1] == "r" && hoge[2][2] == "r"){
-                        board.style.backgroundColor=('orange')
-                        alert("オレンジの勝ち")
-                        element();
-                    }else if(hoge[0][0] == "r" && hoge[1][0] == "r" && hoge[2][0] == "r"){
-                        board.style.backgroundColor=('orange')
-                        alert("オレンジの勝ち")
-                        element();
-                    }else if(hoge[0][1] == "r" && hoge[1][1] == "r" && hoge[2][1] == "r"){
-                        board.style.backgroundColor=('orange')
-                        alert("オレンジの勝ち")
-                        element();
-                    }else if(hoge[0][2] == "r" && hoge[1][2] == "r" && hoge[2][2] == "r"){
-                        board.style.backgroundColor=('orange')
-                        alert("オレンジの勝ち")
-                        element();
-                    }else if(hoge[0][0] == "r" && hoge[1][1] == "r" && hoge[2][2] == "r"){
-                        board.style.backgroundColor=('orange')
-                        alert("オレンジの勝ち")
-                        element();
-                    }else if(hoge[0][2] == "r" && hoge[1][1] == "r" && hoge[2][0] == "r"){
-                        board.style.backgroundColor=('orange')
-                        alert("オレンジの勝ち")
-                        element();
-                    }
-                    //勝ち負けの判定(青)
-                    if(hoge[0][0] == "b" && hoge[0][1] == "b" && hoge[0][2] == "b"){
-                        board.style.backgroundColor=('blue')
-                        alert("青の勝ち")
-                        element();
-                    }else if(hoge[1][0] == "b" && hoge[1][1] == "b" && hoge[1][2] == "b"){
-                        board.style.backgroundColor=('blue')
-                        alert("青の勝ち")
-                        element();
-                    }else if(hoge[2][0] == "b" && hoge[2][1] == "b" && hoge[2][2] == "b"){
-                        board.style.backgroundColor=('blue')
-                        alert("青の勝ち")
-                        element();
-                    }else if(hoge[0][0] == "b" && hoge[1][0] == "b" && hoge[2][0] == "b"){
-                        board.style.backgroundColor=('blue')
-                        alert("青の勝ち")
-                        element();
-                    }else if(hoge[0][1] == "b" && hoge[1][1] == "b" && hoge[2][1] == "b"){
-                        board.style.backgroundColor=('blue')
-                        alert("青の勝ち")
-                        element();
-                    }else if(hoge[0][2] == "b" && hoge[1][2] == "b" && hoge[2][2] == "b"){
-                        board.style.backgroundColor=('blue')
-                        alert("青の勝ち")
-                        element();
-                    }else if(hoge[0][0] == "b" && hoge[1][1] == "b" && hoge[2][2] == "b"){
-                        board.style.backgroundColor=('blue')
-                        alert("青の勝ち")
-                        element();
-                    }else if(hoge[0][2] == "b" && hoge[1][1] == "b" && hoge[2][0] == "b"){
-                        board.style.backgroundColor=('blue')
-                        alert("青の勝ち")
-                        element();
-                    }
-
-                }
-                jud()
+                
             }
             , option);
 
@@ -770,21 +815,3 @@ element.classList.add('btn_19');
 element.href = 'index.html'
 }
 
-
-var sbutton = document.getElementById("sbutton");
-sbutton.addEventListener("click", function () {
-        select.textContent = "△";
-        level = "△"
-    });
-
-var mbutton = document.getElementById("mbutton");
-mbutton.addEventListener("click", function () {
-        select.textContent = "〇";
-        level = "〇"
-    });
-
-var lbutton = document.getElementById("lbutton");
-lbutton.addEventListener("click", function () {
-        select.textContent = "◎";
-        level = "◎"
-    });

@@ -6,13 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>orange_and_blue</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            overflow: hidden;
-            zoom: 1.1;
-            -moz-transform: scale(1.1);
-        }
-    </style>
 </head>
 <body>
     <div id="canvasContainer">
@@ -26,22 +19,6 @@
                         M:〇<br>
                         L:◎
                     </span>
-                    <p>
-                        <div id="button_3">
-                            <span>
-                                <button id="sbutton">△</button>
-                            </span>
-                            <span>
-                                <button id="mbutton">〇</button>
-                            </span>
-                            <span>
-                                <button id="lbutton">◎</button>
-                            </span>
-                        </div>
-                    </p>
-                    <button class="xbutton">駒を取り出します</button>
-                    <button class="button" onclick="window.location.reload();">リセット</button>
-                    <!-- #FF8C00#00008B -->
                 </span>
                 <span id="no">
                     <span id="turn">オレンジのターン</span>
@@ -52,7 +29,6 @@
                     </div>
                     </div>
                     <div id="bg_2"><div id="player_2">△△〇〇◎◎</div></div>
-                    <div id="back"><a href="sub.html">メニューに戻る</a></div>
                 </span>
                 <span id="text-detail">
                     ・自分のコマを盤面の空いている場所に置くことができる。<br>
@@ -62,13 +38,20 @@
                     ・縦、横、斜めのいずれかに同じ色が３つ並び次第ゲームの勝敗が決する。<br>
                     ※いかなることがあろうと、故意的不正がある場合は無効試合となる。※
                 </span>
-                
+                <br>
         </div>
-        <audio src="../bgm/bgm.mp3" autoplay loop>
-            あなたのブラウザーは <code>audio</code>要素をサポートしていません。
-        </audio>
+        <div id="btn_xy">
+            <div>   
+                <button class="bt" id="midle">△</button>
+                <button class="bt" id="lerge">〇</button>
+                <button class="bt" id="extra">◎</button>
+            </div>
+            
+                <button id="back">駒を取り出します</button>
+            </div>
+        </div>
+        
         <!-- <a href="index.html" class="btn_19">restart</a> -->
-
     </div>
     <script src="main.js"></script>
     <body  onContextmenu="return false;">
