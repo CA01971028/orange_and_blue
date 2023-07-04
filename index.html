@@ -31,6 +31,7 @@
                     <div id="bg_2"><div id="player_2">△△〇〇◎◎</div></div>
                     <div id="back"><a href="sub.html">メニューに戻る</a></div>
                 </span>
+                
                 <span id="text-detail">
                     ・自分のコマを盤面の空いている場所に置くことができる。<br>
                     ・自分のコマより小さいコマに被せて隠すことができる。<br>
@@ -47,6 +48,49 @@
   <head>
     <title>BGMを再生する</title>
     <style>
+        /* 勝敗表示のスタイル */
+        .result-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+        }
+
+        .result-overlay .result-container {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .result-overlay h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .result-overlay .winner {
+            font-size: 24px;
+            color: #ff5722;
+            font-weight: bold;
+        }
+
+        .result-overlay .play-again-button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+      
       #playButton {
         padding: 10px 20px;
         font-size: 16px;
@@ -57,6 +101,7 @@
         cursor: pointer;
       }
 
+      /* ボタンの配色 */
       #playButton.playing {
         background-color: #e74c3c;
       }
@@ -82,7 +127,7 @@
       var audioPlayer = new Audio();
 
       // BGMファイルのURLを設定
-      audioPlayer.src = "YOASOBI _ Idol (「アイドル」English Ver-[onlinevideoconverter.com].mp3";
+      audioPlayer.src = "music.mp3";
       audioPlayer.loop = true; // ループ再生を有効にする
 
       // ボタンがクリックされた時の処理
@@ -108,8 +153,47 @@
 
         <!-- <input type="button" value="ページの再読込" onclick="window.location.reload();" /> -->
     </div>
+
+    <body>
+      <!-- ゲームのコンテンツ -->
+  
+      <!-- 勝敗表示のオーバーレイ -->
+      <div class="result-overlay">
+          <div class="result-container">
+              <h1>勝敗結果</h1>
+              <p class="winner">プレイヤー1</p>
+              <p>おめでとうございます！</p>
+              <button class="play-again-button">もう一度プレイ</button>
+          </div>
+      </div>
+  
+      <script>
+          // 勝敗表示のオーバーレイ要素を取得
+          var resultOverlay = document.querySelector('.result-overlay');
+  
+          // ゲームの勝利条件が成立した場合に呼び出す関数
+          function showResult(winner) {
+              var winnerElement = resultOverlay.querySelector('.winner');
+              winnerElement.textContent = winner;
+              resultOverlay.style.display = 'flex';
+          }
+  
+          // もう一度プレイボタンのクリックイベントリスナー
+          var playAgainButton = resultOverlay.querySelector('.play-again-button');
+          playAgainButton.addEventListener('click', function() {
+              resultOverlay.style.display = 'none';
+              // ゲームをリセットするなどの処理を追加
+          });
+  
+          // 勝利条件が成立したと仮定して、以下のように呼び出す
+          showResult('プレイヤー1');
+      </script>
+  </body>
+  
     <script src="main.js"></script>
     <body  onContextmenu="return false;">
 </html>
+
+
 
 
