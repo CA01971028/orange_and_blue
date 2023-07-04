@@ -6,6 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>orange_and_blue</title>
     <link rel="stylesheet" href="style.css">
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 </head>
 <body>
     <div id="canvasContainer">
@@ -14,10 +52,7 @@
             <div id="con-tex">
                 <span id="sp">
                     <div id="se"><div id="select">未定</div></div>
-                    <div>キー設定</div>
-                    <span id="option">S:△<br>
-                        M:〇<br>
-                        L:◎
+                    <span id="option">
                     </span>
                 </span>
                 <span id="no">
@@ -38,20 +73,26 @@
                     ・縦、横、斜めのいずれかに同じ色が３つ並び次第ゲームの勝敗が決する。<br>
                     ※いかなることがあろうと、故意的不正がある場合は無効試合となる。※
                 </span>
-                <br>
+            </br>
         </div>
+        <audio src="../bgm/bgm.mp3" autoplay loop>
+            あなたのブラウザーは <code>audio</code>要素をサポートしていません。
+        </audio>
         <div id="btn_xy">
-            <div>   
+            <div>
                 <button class="bt" id="midle">△</button>
                 <button class="bt" id="lerge">〇</button>
                 <button class="bt" id="extra">◎</button>
             </div>
             
                 <button id="back">駒を取り出します</button>
+                <button class="button" onclick="window.location.reload();">リセット</button>
             </div>
+            <div id="link"><a href="./sub.html">タイトル画面に戻る</a></div>
         </div>
         
         <!-- <a href="index.html" class="btn_19">restart</a> -->
+        
     </div>
     <script src="main.js"></script>
     <body  onContextmenu="return false;">

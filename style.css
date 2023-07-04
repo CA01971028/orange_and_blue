@@ -332,7 +332,7 @@ html, body {
   margin-left: 100px;
 }
 
-a.btn_19 {
+.btn_19 {
   display: block;
   text-align: center;
   vertical-align: middle;
@@ -347,8 +347,12 @@ a.btn_19 {
   border-radius: 5px;
   transition: 0.5s;
   animation: move_a 2s infinite;
-  margin-top: 80px;
-  margin-left: 500px;
+  margin-top: -100px;
+  margin-left: 100px;
+}
+
+.btn_19 {
+  display: block;
 }
 
 @keyframes move_a {
@@ -428,6 +432,11 @@ a.btn_19:hover {
   }
 }
 #btn_xy {
-  margin-top: -180px;
+  margin-top: -250px;
   margin-left: 100px;
+}
+
+#link {
+  margin-top: 150px;
+  margin-left: 550px;
 }/*# sourceMappingURL=style.css.map */

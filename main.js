@@ -91,7 +91,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
                     console.log('駒を置く機能に変更しました');
                 }
 
-            //keyの取得
+            /*keyの取得
             document.addEventListener('keydown', e=>{
 
                 if (e.key === "s") {
@@ -107,7 +107,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
                     select.textContent = "NONE"
                 }
             }
-            );
+            );*/
             td.addEventListener('click', (event)=>{
                 let self = event.target;
                 //駒が置けるか置けないかの判定
