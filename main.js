@@ -597,10 +597,12 @@ window.addEventListener('DOMContentLoaded', ()=>{
                             if (af == "") {
                                 score[index__1][index__2] = "";
                                 hoge[index__1][index__2] = "";
+                                definition = "put";
                             } else {
                                 score[index__1][index__2] = af;
                                 hoge[index__1][index__2] = af_co;
                                 self.textContent = af;
+                                definition = "put";
                             }
                         }else{
                             alert('相手の駒を取ることはできません')
@@ -612,10 +614,12 @@ window.addEventListener('DOMContentLoaded', ()=>{
                             if (af == "") {
                                 score[index__1][index__2] = "";
                                 hoge[index__1][index__2] = "";
+                                definition = "put";
                             } else {
                                 score[index__1][index__2] = af;
                                 hoge[index__1][index__2] = af_co;
                                 self.textContent = af;
+                                definition = "put";
                             }
                         }else{
                             alert('相手の駒を取ることはできません')
