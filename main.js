@@ -112,7 +112,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
                 let self = event.target;
                 //駒が置けるか置けないかの判定
                 const judge = (le_val,sc_val=[],sel_val,index_1,index_2)=>{
-                    if (le_val === "◎" && sc_val[index_1][index_2] !== "◎") {
+                    if (le_val === "◎" && sc_val[index_1][index_2] !== "◎" || sc_val[index_1][index_2] == "undefined") {
                         //◎が指定された場合駒が置けるかどうか
                         if (count % 2 == 0 && pl_1.includes("◎")) {
                             //駒を消した時の処理
@@ -133,34 +133,34 @@ window.addEventListener('DOMContentLoaded', ()=>{
                                 console.log("青色に変わりました")
                             }
                             count++;
-             //手持ちの駒を消す
-                //プレイヤー1（赤の持ち駒）
-                if (count % 2 == 1) {
-                    var index = pl_1.indexOf(level);
-                    if (index != -1) {
-                        pl_1.splice(index, 1);
-                        p_1 = "";
-                        pl_1.forEach(function(value) {
-                            p_1 += value;
-                        })
-                        player_1.textContent = p_1;
-                    }
-                    //プレイヤー２（青の持ち駒）
-                } else {
-                    var index = pl_2.indexOf(level);
-                    if (index != -1) {
-                        pl_2.splice(index, 1);
-                        p_2 = "";
-                        pl_2.forEach(function(value) {
-                            p_2 += value;
-                        })
-                        player_2.textContent = p_2;
-                    }
+                            //手持ちの駒を消す
+                            //プレイヤー1（赤の持ち駒）
+                            if (count % 2 == 1) {
+                                var index = pl_1.indexOf(level);
+                                if (index != -1) {
+                                    pl_1.splice(index, 1);
+                                    p_1 = "";
+                                    pl_1.forEach(function(value) {
+                                        p_1 += value;
+                                    })
+                                    player_1.textContent = p_1;
+                                }
+                                //プレイヤー２（青の持ち駒）
+                            } else {
+                                var index = pl_2.indexOf(level);
+                                if (index != -1) {
+                                    pl_2.splice(index, 1);
+                                    p_2 = "";
+                                    pl_2.forEach(function(value) {
+                                        p_2 += value;
+                                    })
+                                    player_2.textContent = p_2;
+                                }
 
-                }
-                if (pl_1.length == 0 && pl_2.length == 0) {
-                    alert("お互いの駒がなくなりました")
-                }
+                            }
+                            if (pl_1.length == 0 && pl_2.length == 0) {
+                                alert("お互いの駒がなくなりました")
+                            }
                         } else if (count % 2 == 1 && pl_2.includes("◎")) {
                             //駒を消した時の処理
                             if (score[index_1][index_2] != "") {
@@ -180,39 +180,39 @@ window.addEventListener('DOMContentLoaded', ()=>{
                                 console.log("青色に変わりました")
                             }
                             count++;
-             //手持ちの駒を消す
-                //プレイヤー1（赤の持ち駒）
-                if (count % 2 == 1) {
-                    var index = pl_1.indexOf(level);
-                    if (index != -1) {
-                        pl_1.splice(index, 1);
-                        p_1 = "";
-                        pl_1.forEach(function(value) {
-                            p_1 += value;
-                        })
-                        player_1.textContent = p_1;
-                    }
-                    //プレイヤー２（青の持ち駒）
-                } else {
-                    var index = pl_2.indexOf(level);
-                    if (index != -1) {
-                        pl_2.splice(index, 1);
-                        p_2 = "";
-                        pl_2.forEach(function(value) {
-                            p_2 += value;
-                        })
-                        player_2.textContent = p_2;
-                    }
+                            //手持ちの駒を消す
+                            //プレイヤー1（赤の持ち駒）
+                            if (count % 2 == 1) {
+                                var index = pl_1.indexOf(level);
+                                if (index != -1) {
+                                    pl_1.splice(index, 1);
+                                    p_1 = "";
+                                    pl_1.forEach(function(value) {
+                                        p_1 += value;
+                                    })
+                                    player_1.textContent = p_1;
+                                }
+                                //プレイヤー２（青の持ち駒）
+                            } else {
+                                var index = pl_2.indexOf(level);
+                                if (index != -1) {
+                                    pl_2.splice(index, 1);
+                                    p_2 = "";
+                                    pl_2.forEach(function(value) {
+                                        p_2 += value;
+                                    })
+                                    player_2.textContent = p_2;
+                                }
 
-                }
-                if (pl_1.length == 0 && pl_2.length == 0) {
-                    alert("お互いの駒がなくなりました")
-                }
+                            }
+                            if (pl_1.length == 0 && pl_2.length == 0) {
+                                alert("お互いの駒がなくなりました")
+                            }
                         } else {
                             alert("駒がありません")
                         }
 
-                    } else if (le_val === "〇" && (sc_val[index_1][index_2] !== "〇" && sc_val[index_1][index_2] !== "◎")) {
+                    } else if (le_val === "〇" && (sc_val[index_1][index_2] !== "〇" && sc_val[index_1][index_2] !== "◎" || sc_val[index_1][index_2] == "undefined")) {
                         //〇が指定された場合駒が置けるかどうか
                         if (count % 2 == 0 && pl_1.includes("〇")) {
                             if (score[index_1][index_2] != "") {
@@ -232,34 +232,34 @@ window.addEventListener('DOMContentLoaded', ()=>{
                                 console.log("青色に変わりました")
                             }
                             count++;
-             //手持ちの駒を消す
-                //プレイヤー1（赤の持ち駒）
-                if (count % 2 == 1) {
-                    var index = pl_1.indexOf(level);
-                    if (index != -1) {
-                        pl_1.splice(index, 1);
-                        p_1 = "";
-                        pl_1.forEach(function(value) {
-                            p_1 += value;
-                        })
-                        player_1.textContent = p_1;
-                    }
-                    //プレイヤー２（青の持ち駒）
-                } else {
-                    var index = pl_2.indexOf(level);
-                    if (index != -1) {
-                        pl_2.splice(index, 1);
-                        p_2 = "";
-                        pl_2.forEach(function(value) {
-                            p_2 += value;
-                        })
-                        player_2.textContent = p_2;
-                    }
+                            //手持ちの駒を消す
+                            //プレイヤー1（赤の持ち駒）
+                            if (count % 2 == 1) {
+                                var index = pl_1.indexOf(level);
+                                if (index != -1) {
+                                    pl_1.splice(index, 1);
+                                    p_1 = "";
+                                    pl_1.forEach(function(value) {
+                                        p_1 += value;
+                                    })
+                                    player_1.textContent = p_1;
+                                }
+                                //プレイヤー２（青の持ち駒）
+                            } else {
+                                var index = pl_2.indexOf(level);
+                                if (index != -1) {
+                                    pl_2.splice(index, 1);
+                                    p_2 = "";
+                                    pl_2.forEach(function(value) {
+                                        p_2 += value;
+                                    })
+                                    player_2.textContent = p_2;
+                                }
 
-                }
-                if (pl_1.length == 0 && pl_2.length == 0) {
-                    alert("お互いの駒がなくなりました")
-                }
+                            }
+                            if (pl_1.length == 0 && pl_2.length == 0) {
+                                alert("お互いの駒がなくなりました")
+                            }
                         } else if (count % 2 == 1 && pl_2.includes("〇")) {
                             if (score[index_1][index_2] != "") {
                                 origin_val = score[index_1][index_2];
@@ -278,38 +278,38 @@ window.addEventListener('DOMContentLoaded', ()=>{
                                 console.log("青色に変わりました")
                             }
                             count++;
-             //手持ちの駒を消す
-                //プレイヤー1（赤の持ち駒）
-                if (count % 2 == 1) {
-                    var index = pl_1.indexOf(level);
-                    if (index != -1) {
-                        pl_1.splice(index, 1);
-                        p_1 = "";
-                        pl_1.forEach(function(value) {
-                            p_1 += value;
-                        })
-                        player_1.textContent = p_1;
-                    }
-                    //プレイヤー２（青の持ち駒）
-                } else {
-                    var index = pl_2.indexOf(level);
-                    if (index != -1) {
-                        pl_2.splice(index, 1);
-                        p_2 = "";
-                        pl_2.forEach(function(value) {
-                            p_2 += value;
-                        })
-                        player_2.textContent = p_2;
-                    }
+                            //手持ちの駒を消す
+                            //プレイヤー1（赤の持ち駒）
+                            if (count % 2 == 1) {
+                                var index = pl_1.indexOf(level);
+                                if (index != -1) {
+                                    pl_1.splice(index, 1);
+                                    p_1 = "";
+                                    pl_1.forEach(function(value) {
+                                        p_1 += value;
+                                    })
+                                    player_1.textContent = p_1;
+                                }
+                                //プレイヤー２（青の持ち駒）
+                            } else {
+                                var index = pl_2.indexOf(level);
+                                if (index != -1) {
+                                    pl_2.splice(index, 1);
+                                    p_2 = "";
+                                    pl_2.forEach(function(value) {
+                                        p_2 += value;
+                                    })
+                                    player_2.textContent = p_2;
+                                }
 
-                }
-                if (pl_1.length == 0 && pl_2.length == 0) {
-                    alert("お互いの駒がなくなりました")
-                }
+                            }
+                            if (pl_1.length == 0 && pl_2.length == 0) {
+                                alert("お互いの駒がなくなりました")
+                            }
                         } else {
                             alert("駒がありません")
                         }
-                    } else if (le_val === "△" && sc_val[index_1][index_2] == 0 && sc_val[index_1][index_2] != "△") {
+                    } else if (le_val === "△" && sc_val[index_1][index_2] == 0 && sc_val[index_1][index_2] != "△" || sc_val[index_1][index_2] == "undefined") {
                         //△が指定された場合、駒が置けるかどうか
                         if (count % 2 == 0 && pl_1.includes("△")) {
                             if (score[index_1][index_2] != "") {
@@ -329,34 +329,34 @@ window.addEventListener('DOMContentLoaded', ()=>{
                                 console.log("青色に変わりました")
                             }
                             count++;
-             //手持ちの駒を消す
-                //プレイヤー1（赤の持ち駒）
-                if (count % 2 == 1) {
-                    var index = pl_1.indexOf(level);
-                    if (index != -1) {
-                        pl_1.splice(index, 1);
-                        p_1 = "";
-                        pl_1.forEach(function(value) {
-                            p_1 += value;
-                        })
-                        player_1.textContent = p_1;
-                    }
-                    //プレイヤー２（青の持ち駒）
-                } else {
-                    var index = pl_2.indexOf(level);
-                    if (index != -1) {
-                        pl_2.splice(index, 1);
-                        p_2 = "";
-                        pl_2.forEach(function(value) {
-                            p_2 += value;
-                        })
-                        player_2.textContent = p_2;
-                    }
+                            //手持ちの駒を消す
+                            //プレイヤー1（赤の持ち駒）
+                            if (count % 2 == 1) {
+                                var index = pl_1.indexOf(level);
+                                if (index != -1) {
+                                    pl_1.splice(index, 1);
+                                    p_1 = "";
+                                    pl_1.forEach(function(value) {
+                                        p_1 += value;
+                                    })
+                                    player_1.textContent = p_1;
+                                }
+                                //プレイヤー２（青の持ち駒）
+                            } else {
+                                var index = pl_2.indexOf(level);
+                                if (index != -1) {
+                                    pl_2.splice(index, 1);
+                                    p_2 = "";
+                                    pl_2.forEach(function(value) {
+                                        p_2 += value;
+                                    })
+                                    player_2.textContent = p_2;
+                                }
 
-                }
-                if (pl_1.length == 0 && pl_2.length == 0) {
-                    alert("お互いの駒がなくなりました")
-                }
+                            }
+                            if (pl_1.length == 0 && pl_2.length == 0) {
+                                alert("お互いの駒がなくなりました")
+                            }
                         } else if (count % 2 == 1 && pl_2.includes("△")) {
                             if (score[index_1][index_2] != "") {
                                 origin_val = score[index_1][index_2];
