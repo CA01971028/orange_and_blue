@@ -112,7 +112,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
                 let self = event.target;
                 //駒が置けるか置けないかの判定
                 const judge = (le_val,sc_val=[],sel_val,index_1,index_2)=>{
-                    if (le_val === "◎" && sc_val[index_1][index_2] !== "◎" || sc_val[index_1][index_2] == "undefined") {
+                    if (le_val === "◎" && sc_val[index_1][index_2] !== "◎" || typeof sc_val[index_1][index_2] === 'undefined') {
                         //◎が指定された場合駒が置けるかどうか
                         if (count % 2 == 0 && pl_1.includes("◎")) {
                             //駒を消した時の処理
@@ -212,7 +212,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
                             alert("駒がありません")
                         }
 
-                    } else if (le_val === "〇" && (sc_val[index_1][index_2] !== "〇" && sc_val[index_1][index_2] !== "◎" || sc_val[index_1][index_2] == "undefined")) {
+                    } else if (le_val === "〇" && (sc_val[index_1][index_2] !== "〇" && sc_val[index_1][index_2] !== "◎" || typeof sc_val[index_1][index_2] === 'undefined')) {
                         //〇が指定された場合駒が置けるかどうか
                         if (count % 2 == 0 && pl_1.includes("〇")) {
                             if (score[index_1][index_2] != "") {
@@ -309,7 +309,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
                         } else {
                             alert("駒がありません")
                         }
-                    } else if (le_val === "△" && sc_val[index_1][index_2] == 0 && sc_val[index_1][index_2] != "△" || sc_val[index_1][index_2] == "undefined") {
+                    } else if (le_val === "△" && sc_val[index_1][index_2] == 0 && sc_val[index_1][index_2] != "△" || typeof sc_val[index_1][index_2] === 'undefined') {
                         //△が指定された場合、駒が置けるかどうか
                         if (count % 2 == 0 && pl_1.includes("△")) {
                             if (score[index_1][index_2] != "") {
@@ -412,109 +412,112 @@ window.addEventListener('DOMContentLoaded', ()=>{
                     console.log(hoge);
 
                 }
-                switch (self.className) {
-                    case "cell 0-0":
-                        //持ち駒が置けるか置けないか
-                        var index1 = 0;
-                        var index2 = 0;
-                        judge(level, score, self, index1, index2)
-                        if (ju) {
-                            af_00 = origin_val;
-                            af_co00 = origin_col;
+                if(definition === "put"){
+                    switch (self.className) {
+                        case "cell 0-0":
+                            //持ち駒が置けるか置けないか
+                            var index1 = 0;
+                            var index2 = 0;
+                            judge(level, score, self, index1, index2)
+                            if (ju) {
+                                af_00 = origin_val;
+                                af_co00 = origin_col;
+                            }
+                            ju = false;
+                            break;
+                        case "cell 0-1":
+                            var index1 = 1;
+                            var index2 = 0;
+                            judge(level, score, self, index1, index2)
+                            if (ju) {
+                                af_10 = origin_val;
+                                af_co10 = origin_col;
+                            }
+                            ju = false;
+                            break;
+                        case "cell 0-2":
+                            var index1 = 2;
+                            var index2 = 0;
+                            judge(level, score, self, index1, index2)
+                            if (ju) {
+                                af_20 = origin_val;
+                                af_co20 = origin_col;
+                            }
+                            ju = false;
+                            break;
+                        case "cell 1-0":
+                            var index1 = 0;
+                            var index2 = 1;
+                            judge(level, score, self, index1, index2)
+                            if (ju) {
+                                af_01 = origin_val;
+                                af_co01 = origin_col;
+                            }
+                            ju = false;
+                            break;
+                        case "cell 1-1":
+                            var index1 = 1;
+                            var index2 = 1;
+                            judge(level, score, self, index1, index2)
+                            if (ju) {
+                                af_11 = origin_val;
+                                af_co11 = origin_col;
+                            }
+                            ju = false;
+                            break;
+                        case "cell 1-2":
+                            var index1 = 2;
+                            var index2 = 1;
+                            judge(level, score, self, index1, index2)
+                            if (ju) {
+                                af_21 = origin_val;
+                                af_co21 = origin_col;
+                            }
+                            ju = false;
+                            break;
+                        case "cell 2-0":
+                            var index1 = 0;
+                            var index2 = 2;
+                            judge(level, score, self, index1, index2)
+                            if (ju) {
+                                af_02 = origin_val;
+                                af_co02 = origin_col;
+                            }
+                            ju = false;
+                            break;
+                        case "cell 2-1":
+                            var index1 = 1;
+                            var index2 = 2;
+                            judge(level, score, self, index1, index2)
+                            if (ju) {
+                                af_12 = origin_val;
+                                af_co12 = origin_col;
+                            }
+                            ju = false;
+                            break;
+                        case "cell 2-2":
+                            var index1 = 2;
+                            var index2 = 2;
+                            judge(level, score, self, index1, index2)
+                            if (ju) {
+                                af_22 = origin_val;
+                                af_co22 = origin_col;
+                            }
+                            ju = false;
+                            break;
                         }
-                        ju = false;
-                        break;
-                    case "cell 0-1":
-                        var index1 = 1;
-                        var index2 = 0;
-                        judge(level, score, self, index1, index2)
-                        if (ju) {
-                            af_10 = origin_val;
-                            af_co10 = origin_col;
+        
+                        //オレンジか青かのターン
+                        let turn_text = document.querySelector("#turn");
+                        if (count % 2 == 0) {
+                            turn.textContent = "オレンジのターン";
+                            turn_text.style.color = "orange";
+                        } else {
+                            turn.textContent = "ブルーのターン";
+                            turn_text.style.color = "blue";
                         }
-                        ju = false;
-                        break;
-                    case "cell 0-2":
-                        var index1 = 2;
-                        var index2 = 0;
-                        judge(level, score, self, index1, index2)
-                        if (ju) {
-                            af_20 = origin_val;
-                            af_co20 = origin_col;
-                        }
-                        ju = false;
-                        break;
-                    case "cell 1-0":
-                        var index1 = 0;
-                        var index2 = 1;
-                        judge(level, score, self, index1, index2)
-                        if (ju) {
-                            af_01 = origin_val;
-                            af_co01 = origin_col;
-                        }
-                        ju = false;
-                        break;
-                    case "cell 1-1":
-                        var index1 = 1;
-                        var index2 = 1;
-                        judge(level, score, self, index1, index2)
-                        if (ju) {
-                            af_11 = origin_val;
-                            af_co11 = origin_col;
-                        }
-                        ju = false;
-                        break;
-                    case "cell 1-2":
-                        var index1 = 2;
-                        var index2 = 1;
-                        judge(level, score, self, index1, index2)
-                        if (ju) {
-                            af_21 = origin_val;
-                            af_co21 = origin_col;
-                        }
-                        ju = false;
-                        break;
-                    case "cell 2-0":
-                        var index1 = 0;
-                        var index2 = 2;
-                        judge(level, score, self, index1, index2)
-                        if (ju) {
-                            af_02 = origin_val;
-                            af_co02 = origin_col;
-                        }
-                        ju = false;
-                        break;
-                    case "cell 2-1":
-                        var index1 = 1;
-                        var index2 = 2;
-                        judge(level, score, self, index1, index2)
-                        if (ju) {
-                            af_12 = origin_val;
-                            af_co12 = origin_col;
-                        }
-                        ju = false;
-                        break;
-                    case "cell 2-2":
-                        var index1 = 2;
-                        var index2 = 2;
-                        judge(level, score, self, index1, index2)
-                        if (ju) {
-                            af_22 = origin_val;
-                            af_co22 = origin_col;
-                        }
-                        ju = false;
-                        break;
-                    }
-    
-                    //オレンジか青かのターン
-                    let turn_text = document.querySelector("#turn");
-                    if (count % 2 == 0) {
-                        turn.textContent = "オレンジのターン";
-                        turn_text.style.color = "orange";
-                    } else {
-                        turn.textContent = "ブルーのターン";
-                        turn_text.style.color = "blue";
-                    }
+                }
+                
     
                     function jud(){
                         //勝ち負けの判定(オレンジ)
@@ -589,37 +592,39 @@ window.addEventListener('DOMContentLoaded', ()=>{
                     }
                     jud()
                 
-                function right_click(index__1,index__2,af,af_co,){
+                const right_click = (index__1,index__2,af,af_co,) => {
                     if (count % 2 == 0) {
+                        console.log("オレンジの処理");
                         if(hoge[index__1][index__2] == "r"){
                             var va1 = score[index__1][index__2];
                             pl_1.push(va1);
                             if (af == "") {
                                 score[index__1][index__2] = "";
                                 hoge[index__1][index__2] = "";
-                                definition = "put";
+                                // definition = "put";
                             } else {
                                 score[index__1][index__2] = af;
                                 hoge[index__1][index__2] = af_co;
                                 self.textContent = af;
-                                definition = "put";
+                                // definition = "put";
                             }
                         }else{
                             alert('相手の駒を取ることはできません')
                         }
                     } else if (count % 2 == 1) {
+                        console.log("青の処理");
                         if(hoge[index__1][index__2] =="b"){
                             var va2 = score[index__1][index__2];
                             pl_2.push(va2);
                             if (af == "") {
                                 score[index__1][index__2] = "";
                                 hoge[index__1][index__2] = "";
-                                definition = "put";
+                                // definition = "put";
                             } else {
                                 score[index__1][index__2] = af;
                                 hoge[index__1][index__2] = af_co;
                                 self.textContent = af;
-                                definition = "put";
+                                // definition = "put";
                             }
                         }else{
                             alert('相手の駒を取ることはできません')
@@ -639,74 +644,63 @@ window.addEventListener('DOMContentLoaded', ()=>{
                     console.log('駒を取る機能に変更されました')
                     console.log(definition);
                 });
-                if(definition == 'pull'){
-                        switch (self.className) {
-                        case "cell 0-0":
-                            var index__1 = 0;
-                            var index__2 = 0;
-                            right_click(index__1, index__2, af_00, af_co00,)
-                            console.log(hoge)
-                            console.log(score)
-                            break;
-                        case "cell 0-1":
-                            var index__1 = 1;
-                            var index__2 = 0;
-                            right_click(index__1, index__2, af_10, af_co10);
-                            break;
-                        case "cell 0-2":
-                            var index__1 = 2;
-                            var index__2 = 0;
-                            right_click(index__1, index__2, af_20, af_co20);
-                            break;
-                        case "cell 1-0":
-                            var index__1 = 0;
-                            var index__2 = 1;
-                            right_click(index__1, index__2, af_01, af_co01);
-                            break;
-                        case "cell 1-1":
-                            var index__1 = 1;
-                            var index__2 = 1;
-                            right_click(index__1, index__2, af_11, af_co11);
-                            break;
-                        case "cell 1-2":
-                            var index__1 = 2;
-                            var index__2 = 1;
-                            right_click(index__1, index__2, af_21, af_co21);
-                            break;
-                        case "cell 2-0":
-                            var index__1 = 0;
-                            var index__2 = 2;
-                            right_click(index__1, index__2, af_02, af_co02);
-                            break;
-                        case "cell 2-1":
-                            var index__1 = 1;
-                            var index__2 = 2;
-                            right_click(index__1, index__2, af_12, af_co12);
-                            break;
-                        case "cell 2-2":
-                            var index__1 = 2;
-                            var index__2 = 2;
-                            right_click(index__1, index__2, af_22, af_co22);
-                            break;
+                    if(definition == 'pull'){
+                            switch (self.className) {
+                            case "cell 0-0":
+                                var index__1 = 0;
+                                var index__2 = 0;
+                                right_click(index__1, index__2, af_00, af_co00,)
+                                console.log(hoge)
+                                console.log(score)
+                                break;
+                            case "cell 0-1":
+                                var index__1 = 1;
+                                var index__2 = 0;
+                                right_click(index__1, index__2, af_10, af_co10);
+                                break;
+                            case "cell 0-2":
+                                var index__1 = 2;
+                                var index__2 = 0;
+                                right_click(index__1, index__2, af_20, af_co20);
+                                break;
+                            case "cell 1-0":
+                                var index__1 = 0;
+                                var index__2 = 1;
+                                right_click(index__1, index__2, af_01, af_co01);
+                                break;
+                            case "cell 1-1":
+                                var index__1 = 1;
+                                var index__2 = 1;
+                                right_click(index__1, index__2, af_11, af_co11);
+                                break;
+                            case "cell 1-2":
+                                var index__1 = 2;
+                                var index__2 = 1;
+                                right_click(index__1, index__2, af_21, af_co21);
+                                break;
+                            case "cell 2-0":
+                                var index__1 = 0;
+                                var index__2 = 2;
+                                right_click(index__1, index__2, af_02, af_co02);
+                                break;
+                            case "cell 2-1":
+                                var index__1 = 1;
+                                var index__2 = 2;
+                                right_click(index__1, index__2, af_12, af_co12);
+                                break;
+                            case "cell 2-2":
+                                var index__1 = 2;
+                                var index__2 = 2;
+                                right_click(index__1, index__2, af_22, af_co22);
+                                break;
+                            }
                         }
-                        // for(let i = 0;i < 3;i++){
-                        //     for(let f = 0;f < 3;f++){
-                        //         self.textContent = score[i][f]
-                        //     }
-                        // }
-                }
-                //右クリックの動作の導入
-               
-
-                
-            }
-            , option);
-
+            }, option);
         }
         board.appendChild(tr);
     }
 
-    //背景画像の挿入
+    //以下背景画像の挿入
     var Canvas = document.getElementById('canvas');
     var ctx = Canvas.getContext('2d');
 
