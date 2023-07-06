@@ -112,7 +112,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
                 let self = event.target;
                 //駒が置けるか置けないかの判定
                 const judge = (le_val,sc_val=[],sel_val,index_1,index_2)=>{
-                    if (le_val === "◎" && sc_val[index_1][index_2] !== "◎" || sc_val[index_1][index_2] == "undefined") {
+                    if (le_val === "◎" && sc_val[index_1][index_2] !== "◎" || typeof sc_val[index_1][index_2] === 'undefined') {
                         //◎が指定された場合駒が置けるかどうか
                         if (count % 2 == 0 && pl_1.includes("◎")) {
                             //駒を消した時の処理
@@ -212,7 +212,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
                             alert("駒がありません")
                         }
 
-                    } else if (le_val === "〇" && (sc_val[index_1][index_2] !== "〇" && sc_val[index_1][index_2] !== "◎" || sc_val[index_1][index_2] == "undefined")) {
+                    } else if (le_val === "〇" && (sc_val[index_1][index_2] !== "〇" && sc_val[index_1][index_2] !== "◎" || typeof sc_val[index_1][index_2] === 'undefined')) {
                         //〇が指定された場合駒が置けるかどうか
                         if (count % 2 == 0 && pl_1.includes("〇")) {
                             if (score[index_1][index_2] != "") {
@@ -309,7 +309,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
                         } else {
                             alert("駒がありません")
                         }
-                    } else if (le_val === "△" && sc_val[index_1][index_2] == 0 && sc_val[index_1][index_2] != "△" || sc_val[index_1][index_2] == "undefined") {
+                    } else if (le_val === "△" && sc_val[index_1][index_2] == 0 && sc_val[index_1][index_2] != "△" || typeof sc_val[index_1][index_2] === 'undefined') {
                         //△が指定された場合、駒が置けるかどうか
                         if (count % 2 == 0 && pl_1.includes("△")) {
                             if (score[index_1][index_2] != "") {
