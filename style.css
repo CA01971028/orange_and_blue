@@ -383,21 +383,6 @@ a.btn_19:hover {
   background: #fff;
 }
 
-.button {
-  cursor: pointer;
-  margin-top: 40px;
-}
-
-#button_3 {
-  display: flex;
-  flex-direction: row;
-}
-
-#sbutton, #mbutton, #lbutton {
-  width: 40px;
-  height: 40px;
-}
-
 .xbutton {
   white-space: nowrap;
 }
@@ -407,16 +392,24 @@ a.btn_19:hover {
   margin-top: 10px;
   height: 60px;
   width: 60px;
+  font-size: 40px;
+  background-color: white;
 }
 .bt:hover {
   background-color: red;
 }
 
+.reload {
+  margin-top: 10px;
+  margin-left: 183px;
+}
+
 #back {
   margin-top: 20px;
-  margin-left: 50px;
-  width: 150px;
-  height: 30px;
+  margin-left: 20px;
+  width: 232px;
+  height: 35px;
+  font-size: 20px;
   background-color: white;
 }
 #back:hover {
@@ -437,6 +430,6 @@ a.btn_19:hover {
 }
 
 #link {
-  margin-top: 150px;
+  margin-top: 90px;
   margin-left: 550px;
 }/*# sourceMappingURL=style.css.map */
