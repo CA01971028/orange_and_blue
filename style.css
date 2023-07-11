@@ -93,7 +93,7 @@
   position: absolute;
   top: 50px;
   left: 1090px;
-  font-size: 25px;
+  font-size: 26px;
 }
 
 #st {
@@ -198,9 +198,11 @@ td {
 #select {
   height: 80px;
   width: 80px;
-  position: absolute;
   top: 35%;
   left: 45%;
+  font-size: 50px;
+  padding-left: 15px;
+  padding-top: 5px;
 }
 
 #se {
@@ -209,6 +211,11 @@ td {
   height: 80px;
   background-color: whitesmoke;
   border: 1px solid #000000;
+}
+
+#lect {
+  font-size: 25px;
+  padding-top: 0.7em;
 }
 
 #option {
