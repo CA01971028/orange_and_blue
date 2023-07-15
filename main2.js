@@ -203,7 +203,28 @@ document.onkeydown = (e) => {
       if (canMove(1, 0)) offsetX++;
       break;
     case 83: //下
-      if (canMove(0, 1)) offsetY++;
+      if (canMove(0, 10)){
+        offsetY+=10;
+      } else if(canMove(0,9)){
+        offsetY+=9;
+      } else if(canMove(0,8)){
+        offsetY+=8;
+      }else if(canMove(0,7)){
+        offsetY+=7;
+      }else if(canMove(0,6)){
+        offsetY+=6;
+      }else if(canMove(0,5)){
+        offsetY+=5;
+      }else if(canMove(0,4)){
+        offsetY+=4;
+      }else if(canMove(0,3)){
+        offsetY+=3;
+      }else if(canMove(0,2)){
+        offsetY+=2;
+      }else if(canMove(0,1)){
+        offsetY+=1;
+      }
+      
       break;
     case 76: //space
       let newTet = createRotateTet();
