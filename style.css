@@ -1,5 +1,6 @@
 @charset "UTF-8";
-/*sub.html*/
+
+/* sub.html */
 #loading-container {
   /* ローディング画面のコンテナのスタイルを指定する */
   position: fixed;
@@ -20,9 +21,6 @@
   border-radius: 50%;
   border: 5px solid;
   border-color: orange #ffedcc #ffedcc;
-}
-
-.loading__icon {
   animation: loading-rotate 3s infinite linear;
 }
 
@@ -34,6 +32,7 @@
     transform: rotate(360deg);
   }
 }
+
 .bg {
   animation: slide 3s ease-in-out infinite alternate;
   background-image: linear-gradient(-60deg, #8A2BE2 50%, yellow 50%);
@@ -63,6 +62,7 @@
     transform: translateX(25%);
   }
 }
+
 .label {
   font-size: 46px;
   font-weight: bold;
@@ -151,7 +151,7 @@
   transform: rotateX(-90deg);
 }
 
-/*index.html*/
+/* index.html */
 #ma {
   color: black;
   font-size: 20px;
@@ -285,7 +285,8 @@ td {
   height: 100%;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   z-index: 3;
@@ -385,6 +386,7 @@ html, body {
     transform: translate(0px, 0px);
   }
 }
+
 a.btn_19:hover {
   color: #27acd9;
   background: #fff;
