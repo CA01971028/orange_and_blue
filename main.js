@@ -810,7 +810,7 @@ const parent = document.querySelector('#overlayDiv');
 parent.appendChild(element);
 //クラスの設定
 element.classList.add('btn_19');
-element.href = 'index.html'
+element.href = 'index.html';
 }
 
 
