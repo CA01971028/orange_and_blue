@@ -203,17 +203,6 @@ document.onkeydown = (e) => {
       if (canMove(1, 0)) offsetX++;
       break;
     case 83: //下
-      if (canMove(0, 1)){
-        offsetY+=1;
-      }
-      break;
-    case 76: //space
-      let newTet = createRotateTet();
-      if (canMove(0, 0, newTet)) {
-        tet = newTet;
-      }
-      break;
-      case 87://Wのキー操作
       if (canMove(0, 10)){
         offsetY+=10;
       } else if(canMove(0,9)){
@@ -234,6 +223,13 @@ document.onkeydown = (e) => {
         offsetY+=2;
       }else if(canMove(0,1)){
         offsetY+=1;
+      }
+      
+      break;
+    case 76: //space
+      let newTet = createRotateTet();
+      if (canMove(0, 0, newTet)) {
+        tet = newTet;
       }
       break;
     case 49://ブロックの形を変更
