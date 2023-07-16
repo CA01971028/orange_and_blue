@@ -591,8 +591,8 @@ window.addEventListener('DOMContentLoaded', ()=>{
     
                     }
                     jud()
-                 //駒を取る
-                 const right_click = (index__1,index__2,af,af_co,) => {
+                
+                const right_click = (index__1,index__2,af,af_co,) => {
                     if (count % 2 == 0) {
                         console.log("オレンジの処理");
                         if(hoge[index__1][index__2] == "r"){
