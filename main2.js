@@ -211,6 +211,17 @@ document.onkeydown = (e) => {
         tet = newTet;
       }
       break;
+    case 87://wで↓に
+    if (canMove(0, 9)) offsetY+=9;
+    if (canMove(0, 8)) offsetY+=8;
+    if (canMove(0, 7)) offsetY+=7;
+    if (canMove(0, 6)) offsetY+=6;
+    if (canMove(0, 5)) offsetY+=5;
+    if (canMove(0, 4)) offsetY+=4;
+    if (canMove(0, 3)) offsetY+=3;
+    if (canMove(0, 2)) offsetY+=2;
+    if (canMove(0, 1)) offsetY+=1;
+      break;
     case 49://ブロックの形を変更
     tetTypes = [
       [], //0を空としておく
